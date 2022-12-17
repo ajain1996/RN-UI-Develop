@@ -50,7 +50,7 @@ export default function AuthStack() {
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.bg} />
       <Stack.Navigator
         screenOptions={screenOptions}
-        initialRouteName={"RegisterProfile"}
+        initialRouteName={"HomeDashboardScreen"}
       >
         <Stack.Screen name="HomeDashboardScreen" component={HomeDashboardScreen} />
         <Stack.Screen name="EditProfileDetailsScreen" component={EditProfileDetailsScreen} />

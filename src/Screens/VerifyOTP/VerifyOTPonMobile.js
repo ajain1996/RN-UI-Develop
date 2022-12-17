@@ -25,11 +25,7 @@ import {
 const VerifyOTPonMobile = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const inputRef2 = useRef();
-    const inputRef3 = useRef();
-    const inputRef4 = useRef();
-    const inputRef5 = useRef();
-    const inputRef6 = useRef();
+    const otpRef = useRef();
 
     const [value, setValue] = useState('');
     const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -56,7 +52,7 @@ const VerifyOTPonMobile = () => {
                     </View>
 
                     <CodeField
-                        ref={inputRef2}
+                        ref={otpRef}
                         {...props}
                         value={value}
                         onChangeText={setValue}

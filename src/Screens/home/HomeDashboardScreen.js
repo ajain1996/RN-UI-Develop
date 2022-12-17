@@ -101,16 +101,18 @@ export default function HomeDashboardScreen({ navigation }) {
                     ListHeaderComponent={
                         <View>
                             <HomeCarousel />
-                            <Image
-                                source={require("../../Assets/home-tags.png")}
-                                resizeMode="contain"
-                                style={{ width: SIZES.width, alignSelf: "center" }}
-                            />
+                            <View style={{ alignItems: 'center' }}>
+                                <Image
+                                    source={require("../../Assets/home-tags.png")}
+                                    resizeMode="contain"
+                                    style={{ width: SIZES.width }}
+                                />
+                            </View>
                         </View>
                     }
                     ListFooterComponent={
                         <>
-                            <View style={{ marginTop: 16, padding: 14, elevation: 9, shadowColor: "#999", backgroundColor: COLORS.bg, margin: 20, borderRadius: 9 }}>
+                            <View style={{ marginTop: 16, padding: 14, elevation: 9, shadowColor: "#999", backgroundColor: COLORS.bg, margin: 20, borderRadius: 9, width: "91%" }}>
                                 <ShadowBg
                                     width={SIZES.width / 1.2}
                                     height={52}
@@ -155,6 +157,36 @@ export default function HomeDashboardScreen({ navigation }) {
                                 />
 
                                 <View style={{ ...commonStyles.rowBetween, marginTop: 16 }}>
+                                    <View style={{ width: "30%" }}>
+                                        <Image
+                                            source={require("../../Assets/pie1.png")}
+                                            resizeMode="stretch"
+                                            style={{ width: "100%", height: SIZES.width / 3.3 }}
+                                        />
+                                        <View style={{ position: "absolute", bottom: 12, left: "37.5%", backgroundColor: COLORS.bg }}>
+                                            <Text style={{ ...commonStyles.fs11_400 }}>0055</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: "30%" }}>
+                                        <Image
+                                            source={require("../../Assets/pie2.png")}
+                                            resizeMode="stretch"
+                                            style={{ width: "100%", height: SIZES.width / 3.3 }}
+                                        />
+                                        <View style={{ position: "absolute", bottom: 12, left: "37.5%", backgroundColor: COLORS.bg }}>
+                                            <Text style={{ ...commonStyles.fs11_400 }}>0011</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: "30%" }}>
+                                        <Image
+                                            source={require("../../Assets/pie3.png")}
+                                            resizeMode="stretch"
+                                            style={{ width: "100%", height: SIZES.width / 3.3 }}
+                                        />
+                                        <View style={{ position: "absolute", bottom: 12, left: "37.5%", backgroundColor: COLORS.bg }}>
+                                            <Text style={{ ...commonStyles.fs11_400 }}>00044</Text>
+                                        </View>
+                                    </View>
                                     {/* <PieChart
                                         data={data}
                                         width={SIZES.width}
@@ -166,9 +198,9 @@ export default function HomeDashboardScreen({ navigation }) {
                                         center={[10, 10]}
                                         absolute
                                     /> */}
-                                    <CustomPieChart headingText="Onboard" />
+                                    {/* <CustomPieChart headingText="Onboard" />
                                     <CustomPieChart headingText="Replacement" />
-                                    <CustomPieChart headingText="Pending" />
+                                    <CustomPieChart headingText="Pending" /> */}
                                 </View>
                             </View>
                             <View style={{ height: 170 }} />

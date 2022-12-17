@@ -6,19 +6,20 @@ import { TextInput } from 'react-native'
 import { Image } from 'react-native'
 import { COLORS } from '../../Constant/Color'
 
-export default function ProfileCUstomInput({ icon, onChange, title }) {
+export default function ProfileCUstomInput({ icon, onChange, title, placeholder }) {
     return (
         <View style={{}}>
             <Text style={styles.nameText}>{title}</Text>
             <View style={styles.nameInputContainer}>
                 <Image
-                    source={icon}
+                    source={icon} resizeMode="contain"
                     style={{ width: 24, height: 24 }}
                 />
                 <View style={styles.inputDivider} />
                 <TextInput
-                    placeholder=''
-                    style={{ backgroundColor: COLORS.bg, width: "85%" }}
+                    placeholder={placeholder ? placeholder : ""}
+                    placeholderTextColor="#63798E"
+                    style={{ backgroundColor: COLORS.bg, width: "85%", color: "#000" }}
                     onChangeText={onChange}
                 />
             </View>

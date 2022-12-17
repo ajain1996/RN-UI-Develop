@@ -1,8 +1,12 @@
-import React from 'react';
-import { View, Text, Image, TextInput } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { IMAGE } from '../../Assets/Images/map';
+import { commonStyles } from '../../utils/Styles';
 import { styles } from './CustomInputStyle';
 
 const CustomInput = props => {
+  const [showEye, setShowEye] = useState(false);
+
   return (
     <View style={props.containerStyle}>
       <Text style={styles.titleText}>{props.title}</Text>
@@ -16,10 +20,12 @@ const CustomInput = props => {
           onChangeText={text => props.onChangeText(text)}
         />
         {props.isImage ? (
-          <Image
-            source={props.secondImage}
-            style={[props.secondImageStyle, styles.secondImage]}
-          />
+          <TouchableOpacity onPress={() => { setShowEye(!showEye) }} style={{ ...commonStyles.centerStyles }}>
+            <Image
+              source={showEye ? IMAGE.hidden : IMAGE.eye}
+              style={[props.secondImageStyle, styles.secondImage]}
+            />
+          </TouchableOpacity>
         ) : (
           <View style={[props.secondImageStyle, styles.secondImage]} />
         )}

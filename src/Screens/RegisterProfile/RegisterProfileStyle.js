@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../../Constant/Color';
 
 export const styles = StyleSheet.create({
   mainView: {
@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 45,
     justifyContent: 'space-between',
+    width: SIZES.width
   },
   subView: {
     paddingTop: 30,
@@ -51,7 +52,7 @@ export const styles = StyleSheet.create({
   },
 
   disableButton: {
-    width: '45%',
+    width: '34%',
     backgroundColor: '#F1F5F9',
     flexDirection: 'row',
     shadowColor: '#000',

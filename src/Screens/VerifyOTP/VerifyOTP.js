@@ -6,21 +6,41 @@ import {
   ImageBackground,
   TextInput,
   ScrollView,
+  StyleSheet,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { styles } from './VerifyOTPStyle';
 import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import Header from '../../Components/Header/Header';
 import { COLORS } from '../../Constant/Color';
 import RequestModal from '../RequestModal/RequestModal';
+import {
+  CodeField,
+  Cursor,
+  useBlurOnFulfill,
+  useClearByFocusCell,
+} from 'react-native-confirmation-code-field';
 
 const VerifyOTP = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  const inputRef2 = useRef();
+  const inputRef3 = useRef();
+  const inputRef4 = useRef();
+  const inputRef5 = useRef();
+  const inputRef6 = useRef();
+
+  const [value, setValue] = useState('');
+  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+    value,
+    setValue,
+  });
+
   return (
     <ScrollView
       style={{
-        backgroundColor: COLORS.bgColor,
+        backgroundColor: COLORS.bg,
         flex: 1,
       }}>
       <View style={styles.mainconteiner}>
@@ -35,79 +55,27 @@ const VerifyOTP = () => {
             </Text>
           </View>
 
-          <View style={styles.mainconteinertwo}>
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
+          <CodeField
+            ref={inputRef2}
+            {...props}
+            value={value}
+            onChangeText={setValue}
+            cellCount={6}
+            rootStyle={styles.codeFieldRoot}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            renderCell={({ index, symbol, isFocused }) => (
+              <ImageBackground
+                source={IMAGE.VerificationImg}
+                resizeMode="cover"
+                style={styles.image}>
+                <Text style={styles.cellText}>
+                  {symbol || (isFocused ? <Cursor /> : null)}
+                </Text>
+              </ImageBackground>
+            )}
+          />
 
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
-
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
-
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
-
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
-
-            <ImageBackground
-              source={IMAGE.VerificationImg}
-              resizeMode="cover"
-              style={styles.image}>
-              <TextInput
-                keyboardType="numeric"
-                maxLength={1}
-                style={styles.TextInput}
-                placeholder="*"
-              />
-            </ImageBackground>
-          </View>
           <View style={styles.subView}>
             <CustomButton buttonText="Submit" />
           </View>

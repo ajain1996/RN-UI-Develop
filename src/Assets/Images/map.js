@@ -16,4 +16,5 @@ export const IMAGE = {
   pancard: require('../Images/pancard.png'),
   addImage: require('../Images/addImage.png'),
   house: require('../Images/house.png'),
+  hidden: require('../hidden.png'),
 };

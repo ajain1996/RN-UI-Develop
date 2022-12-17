@@ -1,8 +1,8 @@
-import {View, Text, ScrollView} from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './RegisterStepOneStyle';
+import { View, Text, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { styles } from './RegisterStepOneStyle';
 import CustomInput from '../CustomInput/CustomInput';
-import {IMAGE} from '../../Assets/Images/map';
+import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../CustomButton/CustomButton';
 
 const RegisterStepOne = () => {
@@ -81,38 +81,7 @@ const RegisterStepOne = () => {
         containerStyle={styles.container}
         isImage={false}
       />
-      <CustomInput
-        image={IMAGE.address}
-        title={'City'}
-        imageStyle={styles.user}
-        placeholderStyle={styles.textInput}
-        placeHolderTitle="City"
-        onChangeText={value => setUserName(value)}
-        containerStyle={styles.container}
-        isImage={false}
-      />
-      <CustomInput
-        image={IMAGE.address}
-        title={'Dist'}
-        imageStyle={styles.user}
-        placeholderStyle={styles.textInput}
-        placeHolderTitle="Dist"
-        onChangeText={value => setUserName(value)}
-        containerStyle={styles.container}
-        isImage={false}
-      />
-      <CustomInput
-        image={IMAGE.user}
-        title={'State'}
-        imageStyle={styles.user}
-        placeholderStyle={styles.textInput}
-        placeHolderTitle="State"
-        onChangeText={value => setUserName(value)}
-        containerStyle={styles.container}
-        isImage={true}
-        secondImage={IMAGE.downArrow}
-        secondImageStyle={styles.downArrow}
-      />
+
       <View
         style={{
           marginTop: 25,

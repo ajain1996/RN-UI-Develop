@@ -1,9 +1,9 @@
-import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {styles} from './LoginStyle';
+import { styles } from './LoginStyle';
 import CustomInput from '../../Components/CustomInput/CustomInput';
-import {IMAGE} from '../../Assets/Images/map';
+import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import OrSeprator from '../../Components/OrSeprator/OrSeprator';
 
@@ -27,8 +27,8 @@ const Login = () => {
           {isPssword ? (
             <TouchableOpacity style={styles.passwordBtn}>
               <LinearGradient
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
                 colors={['#3FA9F6', '#2360F0']}
                 style={styles.linearGradient}>
                 <Text style={styles.buttonText}>Login Via Password</Text>
@@ -43,10 +43,10 @@ const Login = () => {
           )}
 
           {isOTP ? (
-            <TouchableOpacity style={{width: '50%'}}>
+            <TouchableOpacity style={{ width: '50%' }}>
               <LinearGradient
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
                 colors={['#3FA9F6', '#2360F0']}
                 style={styles.linearGradient}>
                 <Text style={styles.buttonText}>Login Via OTP</Text>

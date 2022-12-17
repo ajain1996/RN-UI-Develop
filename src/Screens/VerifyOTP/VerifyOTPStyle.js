@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../Constant/Color';
+import { commonStyles } from '../../utils/Styles';
 
 export const styles = StyleSheet.create({
   mainconteiner: {
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
 
     flex: 1,
   },
-  mainView: {paddingHorizontal: 20},
+  mainView: { paddingHorizontal: 20 },
   txt: {
     fontSize: 20,
     textAlign: 'center',
@@ -51,12 +52,14 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
   TextInput: {
-    fontSize: 28,
+    fontSize: 20,
     textAlign: 'center',
+    color: "#000",
   },
   image: {
     height: 50,
     width: 50,
+    ...commonStyles.centerStyles
   },
   buttonView: {
     flexDirection: 'row',
@@ -125,5 +128,28 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     marginTop: 25,
+  },
+  codeFieldRoot: {
+    marginTop: 40,
+    width: '100%',
+  },
+  cellRoot: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 9,
+    shadowColor: "#999",
+    backgroundColor: COLORS.bg,
+    borderRadius: 100
+  },
+  cellText: {
+    color: '#000',
+    fontSize: 28,
+    textAlign: 'center',
+  },
+  focusCell: {
+    borderBottomColor: '#007AFF',
+    borderBottomWidth: 2,
   },
 });

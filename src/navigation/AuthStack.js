@@ -36,6 +36,7 @@ import WalletDetailsScreen from "../Screens/wallet/WalletDetailsScreen";
 import TagReplacementScreen1 from "../Screens/tag/TagReplacementScreen1";
 import EditProfileDetailsScreen from '../Screens/profile/EditProfileDetailsScreen';
 import HomeDashboardScreen from '../Screens/home/HomeDashboardScreen';
+import VerifyOTPonMobile from '../Screens/VerifyOTP/VerifyOTPonMobile';
 
 const Stack = createStackNavigator();
 
@@ -49,7 +50,7 @@ export default function AuthStack() {
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.bg} />
       <Stack.Navigator
         screenOptions={screenOptions}
-        initialRouteName={"HomeDashboardScreen"}
+        initialRouteName={"RegisterProfile"}
       >
         <Stack.Screen name="HomeDashboardScreen" component={HomeDashboardScreen} />
         <Stack.Screen name="EditProfileDetailsScreen" component={EditProfileDetailsScreen} />
@@ -80,6 +81,7 @@ export default function AuthStack() {
 
         <Stack.Screen name="RegisterProfile" component={RegisterProfile} />
         <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
+        <Stack.Screen name="VerifyOTPonMobile" component={VerifyOTPonMobile} />
         <Stack.Screen name="ResetPassword" component={ResetPassword} />
         <Stack.Screen
           name="LoginOTPVerification"

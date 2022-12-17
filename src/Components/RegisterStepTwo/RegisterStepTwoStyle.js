@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../Constant/Color';
 
 export const styles = StyleSheet.create({
   mainView: {
@@ -62,6 +62,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
     textAlign: 'center',
+    color: "#63798E"
   },
   addImage: {
     width: 50,

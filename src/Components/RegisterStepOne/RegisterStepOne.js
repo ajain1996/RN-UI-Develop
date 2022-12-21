@@ -14,6 +14,7 @@ const RegisterStepOne = () => {
         image={IMAGE.user}
         title={'Father Name'}
         imageStyle={styles.user}
+        textInputStyle={[styles.textInput, { paddingLeft: 12 }]}
         placeholderStyle={styles.textInput}
         placeHolderTitle="Father Name"
         onChangeText={value => setUserName(value)}
@@ -34,6 +35,7 @@ const RegisterStepOne = () => {
         title={'Contact Person Name'}
         imageStyle={styles.user}
         placeholderStyle={styles.textInput}
+        textInputStyle={styles.textInput}
         placeHolderTitle="Contact Person Name"
         onChangeText={value => setUserName(value)}
         containerStyle={styles.container}
@@ -44,6 +46,7 @@ const RegisterStepOne = () => {
         title={'Contact person mobile no.'}
         imageStyle={styles.phone}
         placeholderStyle={styles.textInput}
+        textInputStyle={styles.textInput}
         placeHolderTitle="Contact person mobile no."
         onChangeText={value => setUserName(value)}
         containerStyle={styles.container}
@@ -54,6 +57,7 @@ const RegisterStepOne = () => {
         title={'Select relationship status'}
         imageStyle={styles.user}
         placeholderStyle={styles.textInput}
+        textInputStyle={styles.textInput}
         placeHolderTitle="Relationship"
         onChangeText={value => setUserName(value)}
         containerStyle={styles.container}
@@ -65,6 +69,7 @@ const RegisterStepOne = () => {
         image={IMAGE.address}
         title={'Address'}
         imageStyle={styles.user}
+        textInputStyle={styles.textInput}
         placeholderStyle={styles.textInput}
         placeHolderTitle="Address"
         onChangeText={value => setUserName(value)}
@@ -76,6 +81,7 @@ const RegisterStepOne = () => {
         title={'Pin code'}
         imageStyle={styles.pincode}
         placeholderStyle={styles.textInput}
+        textInputStyle={styles.textInput}
         placeHolderTitle="Pin Code"
         onChangeText={value => setUserName(value)}
         containerStyle={styles.container}

@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../Constant/Color';
 
 export const styles = StyleSheet.create({
   mainView: {
@@ -84,9 +84,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 10,
+    color: "#000",
+    width: "75%",
+    marginLeft: 40
   },
   container: {
     marginTop: 25,
+    color: "#000"
   },
   eyeStyle: {
     height: 24,

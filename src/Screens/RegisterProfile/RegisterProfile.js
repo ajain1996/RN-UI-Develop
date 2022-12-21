@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import RegisterStepOne from '../../Components/RegisterStepOne/RegisterStepOne';
 import RegisterStepTwo from '../../Components/RegisterStepTwo/RegisterStepTwo';
 import RegisterStepThree from '../../Components/RegisterStepThree/RegisterStepThree';
+import { commonStyles } from '../../utils/Styles';
 
 const RegisterProfile = () => {
   const [isStepOne, setIsStepOne] = useState(true);
@@ -27,7 +28,7 @@ const RegisterProfile = () => {
     setIsStepThree(true);
   };
   return (
-    <View>
+    <View style={{ ...commonStyles.bgFFF }}>
       <Header isBack={true} title="Profile" />
       <ScrollView style={styles.subView}>
         <View style={styles.buttonView}>

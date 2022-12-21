@@ -7,7 +7,7 @@ import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import OrSeprator from '../../Components/OrSeprator/OrSeprator';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [isPssword, setIsPassword] = useState(true);
   const [isOTP, setIsOTP] = useState(false);
   const [userName, setUserName] = useState('');
@@ -66,6 +66,7 @@ const Login = () => {
             title={'UserName'}
             imageStyle={styles.phone}
             placeholderStyle={styles.textInput}
+            textInputStyle={styles.textInput}
             placeHolderTitle="Please enter mobile no. or email ID"
             onChangeText={value => setUserName(value)}
             containerStyle={styles.container}
@@ -101,7 +102,7 @@ const Login = () => {
               <Text style={styles.forgotText}>I don't have account</Text>
             </TouchableOpacity>
           </View>
-          <CustomButton buttonText="Register Now" />
+          <CustomButton buttonText="Register Now" onPress={() => { navigation.navigate("Register") }} />
         </View>
       </View>
     </ScrollView>

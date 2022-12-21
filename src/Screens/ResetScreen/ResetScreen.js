@@ -1,16 +1,17 @@
-import {View, Text} from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './ResetScreenStyle';
+import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { styles } from './ResetScreenStyle';
 import Header from '../../Components/Header/Header';
 import CustomInput from '../../Components/CustomInput/CustomInput';
-import {IMAGE} from '../../Assets/Images/map';
+import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
+import { commonStyles } from '../../utils/Styles';
 
 const ResetScreen = () => {
   const [userName, setUserName] = useState('');
 
   return (
-    <>
+    <View style={{ ...commonStyles.bgFFF }}>
       <Header isBack={true} title={'Reset Password'} />
       <View style={styles.mainView}>
         <View style={styles.subView}>
@@ -18,6 +19,7 @@ const ResetScreen = () => {
             image={IMAGE.phone}
             title={'Mobile No./ Email ID'}
             imageStyle={styles.phone}
+            textInputStyle={[styles.textInput, { paddingLeft: 12 }]}
             placeholderStyle={styles.textInput}
             placeHolderTitle="Please enter mobile no. or email ID"
             onChangeText={value => setUserName(value)}
@@ -27,7 +29,7 @@ const ResetScreen = () => {
         </View>
         <CustomButton buttonText="Get OTP" />
       </View>
-    </>
+    </View>
   );
 };
 

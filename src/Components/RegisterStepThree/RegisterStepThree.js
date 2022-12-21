@@ -25,8 +25,6 @@ const RegisterStepThree = () => {
             } else if (response?.customButton) {
             } else {
                 setImage(response?.assets[0].uri);
-                setImageData(response);
-                setImageData(response);
             }
         });
     };
@@ -48,7 +46,7 @@ const RegisterStepThree = () => {
                 image={IMAGE.address}
                 title={'Address proof'}
                 imageStyle={styles.user}
-                placeholderStyle={styles.textInput}
+                textInputStyle={styles.textInput}
                 placeHolderTitle="Address proof"
                 onChangeText={value => setUserName(value)}
                 containerStyle={styles.container}
@@ -60,6 +58,7 @@ const RegisterStepThree = () => {
                 image={IMAGE.pancard}
                 title={'Address ID proof number'}
                 imageStyle={styles.user}
+                textInputStyle={styles.textInput}
                 placeholderStyle={styles.textInput}
                 placeHolderTitle="Address ID proof number"
                 onChangeText={value => setUserName(value)}
@@ -82,6 +81,7 @@ const RegisterStepThree = () => {
                 title={'Pos type'}
                 imageStyle={styles.user}
                 placeholderStyle={styles.textInput}
+                textInputStyle={styles.textInput}
                 placeHolderTitle="Pos type"
                 onChangeText={value => setUserName(value)}
                 containerStyle={styles.container}
@@ -94,6 +94,7 @@ const RegisterStepThree = () => {
                 title={'Pos type'}
                 imageStyle={styles.user}
                 placeholderStyle={styles.textInput}
+                textInputStyle={styles.textInput}
                 placeHolderTitle="Pos type"
                 onChangeText={value => setUserName(value)}
                 containerStyle={styles.container}

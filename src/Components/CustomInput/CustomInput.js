@@ -15,7 +15,8 @@ const CustomInput = props => {
         <View style={styles.saprator} />
 
         <TextInput
-          style={[props.textInputStyle]}
+          style={[props.textInputStyle, { width: props.isImage ? "63%" : "75%" }]}
+          secureTextEntry={showEye ? false : true}
           placeholder={props.placeHolderTitle}
           onChangeText={text => props.onChangeText(text)}
         />
@@ -27,7 +28,7 @@ const CustomInput = props => {
             />
           </TouchableOpacity>
         ) : (
-          <View style={[props.secondImageStyle, styles.secondImage]} />
+          <></>
         )}
       </View>
     </View>

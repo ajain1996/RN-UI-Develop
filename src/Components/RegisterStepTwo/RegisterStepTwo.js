@@ -37,6 +37,7 @@ const RegisterStepTwo = () => {
         image={IMAGE.address}
         title={'City'}
         imageStyle={styles.user}
+        textInputStyle={styles.textInput}
         placeholderStyle={styles.textInput}
         placeHolderTitle="City"
         onChangeText={value => setUserName(value)}
@@ -47,6 +48,7 @@ const RegisterStepTwo = () => {
         image={IMAGE.address}
         title={'Dist'}
         imageStyle={styles.user}
+        textInputStyle={styles.textInput}
         placeholderStyle={styles.textInput}
         placeHolderTitle="Dist"
         onChangeText={value => setUserName(value)}
@@ -57,6 +59,7 @@ const RegisterStepTwo = () => {
         image={IMAGE.user}
         title={'State'}
         imageStyle={styles.user}
+        textInputStyle={styles.textInput}
         placeholderStyle={styles.textInput}
         placeHolderTitle="State"
         onChangeText={value => setUserName(value)}
@@ -67,6 +70,7 @@ const RegisterStepTwo = () => {
       />
       <CustomInput
         image={IMAGE.pancard}
+        textInputStyle={styles.textInput}
         title={'PAN card number'}
         imageStyle={styles.user}
         placeholderStyle={styles.textInput}
@@ -91,12 +95,14 @@ const RegisterStepTwo = () => {
         onChangeText={value => setUserName(value)}
         containerStyle={styles.container}
         isImage={true}
+        textInputStyle={styles.textInput}
         secondImage={IMAGE.downArrow}
         secondImageStyle={styles.downArrow}
       />
       <CustomInput
         image={IMAGE.pancard}
         title={'ID proof number'}
+        textInputStyle={styles.textInput}
         imageStyle={styles.user}
         placeholderStyle={styles.textInput}
         placeHolderTitle="ID proof number"

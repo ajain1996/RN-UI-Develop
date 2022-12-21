@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../Constant/Color';
 
 export const styles = StyleSheet.create({
   mainconteiner: {
@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 
     flex: 1,
   },
-  mainView: {paddingHorizontal: 20},
+  mainView: { paddingHorizontal: 20 },
   txt: {
     fontSize: 20,
     textAlign: 'center',
@@ -49,6 +49,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     flexDirection: 'row',
     marginTop: 20,
+  },
+  cellText: {
+    color: '#000',
+    fontSize: 28,
+    textAlign: 'center',
   },
   TextInput: {
     fontSize: 28,

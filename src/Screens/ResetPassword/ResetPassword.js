@@ -12,8 +12,18 @@ import { styles } from './ResetPasswordStyle';
 import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import Header from '../../Components/Header/Header';
+import { CodeField, Cursor, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 const ResetPassword = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const otpRef = React.useRef();
+
+  const [value, setValue] = React.useState('');
+  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+    value,
+    setValue,
+  });
+
   return (
     <ScrollView>
       <View style={styles.mainconteiner}>
@@ -27,6 +37,28 @@ const ResetPassword = () => {
               Please type the verification code
             </Text>
           </View>
+
+          {/* <CodeField
+            ref={otpRef}
+            {...props}
+            value={value}
+            onChangeText={setValue}
+            cellCount={6}
+            rootStyle={styles.codeFieldRoot}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            renderCell={({ index, symbol, isFocused }) => (
+              <ImageBackground
+                source={IMAGE.VerificationImg}
+                onLayout={getCellOnLayoutHandler(index)}
+                resizeMode="cover"
+                style={styles.image}>
+                <Text style={styles.cellText}>
+                  {symbol || (isFocused ? <Cursor /> : null)}
+                </Text>
+              </ImageBackground>
+            )}
+          /> */}
 
           <View style={styles.mainconteinertwo}>
             <ImageBackground

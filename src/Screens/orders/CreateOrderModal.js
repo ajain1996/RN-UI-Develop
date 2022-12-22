@@ -13,6 +13,17 @@ import { Button } from 'react-native-paper';
 import Crossbtn from '../../Components/Crossbtn';
 import ProfileAccordian from '../profile/ProfileAccordian';
 import CustomInputBox from '../../Components/CustomInputBox';
+import { Dropdown } from 'react-native-element-dropdown'
+import { dropdownStyles } from '../../utils/dropdownStyles';
+import CustomDropdownComponent from '../../Components/CustomDropdownComponent';
+
+export const data = [
+    { label: 'HDFC', value: 'HDFC' },
+    { label: 'Kotak', value: 'Kotak' },
+    { label: 'ICICI', value: '+93' },
+    { label: 'Canara', value: 'Canara' },
+    { label: 'Dena', value: 'Dena' },
+];
 
 const CreateOrderModal = ({ modalVisible, callback, navigation }) => {
     const [selectBank, setselectBank] = React.useState(false);
@@ -40,20 +51,14 @@ const CreateOrderModal = ({ modalVisible, callback, navigation }) => {
                             </View>
                             <Crossbtn callback={callback} />
                         </View>
-                        <View style={{ width: '105%' }}>
-                            <ProfileAccordian
-                                showMasterDetails={selectBank}
-                                setshowMasterDetails={setselectBank}
-                                title="Select Bank"
-                                callBack={() => { }}
+                        <View style={{ width: '105%', alignItems: 'center' }}>
+                            <CustomDropdownComponent
+                                placeholder="Select Bank"
+                                data={data}
                             />
-                            <Text />
-
-                            <ProfileAccordian
-                                showMasterDetails={selectBank}
-                                setshowMasterDetails={setselectBank}
-                                title="Select Bank"
-                                callBack={() => { }}
+                            <CustomDropdownComponent
+                                placeholder="Vehicle class"
+                                data={data}
                             />
                         </View>
 

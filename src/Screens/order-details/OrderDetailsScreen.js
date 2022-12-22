@@ -2,12 +2,14 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import InventoryHeader from '../inventory/InventoryHeader'
 import { commonStyles } from '../../utils/Styles'
-import { COLORS } from '../../Constant/Color'
+import { COLORS, SIZES } from '../../Constant/Color'
 import { ScrollView } from 'react-native'
 import { StyleSheet } from 'react-native'
 import { Button } from 'react-native-paper'
 import ProfileAccordian from '../profile/ProfileAccordian'
 import { Image } from 'react-native'
+import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
+import { data } from '../orders/CreateOrderModal'
 
 export default function OrderDetailsScreen({ navigation }) {
     const [bankName, setbankName] = React.useState(false);
@@ -61,11 +63,10 @@ export default function OrderDetailsScreen({ navigation }) {
                         </Button>
                     </View>
 
-                    <ProfileAccordian
-                        showMasterDetails={bankName}
-                        setshowMasterDetails={setbankName}
-                        title="Kotak Bank"
-                        callBack={() => { }}
+                    <CustomDropdownComponent
+                        placeholder="Select Bank"
+                        data={data}
+                        width={SIZES.width / 1.1}
                     />
 
                     <View style={styles.orderMenu}>

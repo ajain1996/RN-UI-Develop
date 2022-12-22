@@ -9,8 +9,10 @@ import ProfileAccordian from '../profile/ProfileAccordian'
 import { Image } from 'react-native'
 import { Button } from 'react-native-paper'
 import { StyleSheet } from 'react-native'
-import { COLORS } from '../../Constant/Color'
+import { COLORS, SIZES } from '../../Constant/Color'
 import { TouchableHighlight } from 'react-native'
+import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
+import { data } from '../orders/CreateOrderModal'
 
 export default function InsuranceTrackerScreen({ navigation }) {
     const [selectBankAcc, setselectBankAcc] = React.useState(false);
@@ -34,11 +36,10 @@ export default function InsuranceTrackerScreen({ navigation }) {
                         />
                     </View>
 
-                    <ProfileAccordian
-                        showMasterDetails={selectBankAcc}
-                        setshowMasterDetails={setselectBankAcc}
-                        title="Select Bank"
-                        callBack={() => { }}
+                    <CustomDropdownComponent
+                        placeholder="Select Bank"
+                        data={data}
+                        width={SIZES.width / 1.1}
                     />
 
                     <View style={{ width: "100%", height: 1, backgroundColor: "#ddd", marginVertical: 24 }} />

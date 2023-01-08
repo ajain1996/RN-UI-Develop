@@ -10,7 +10,7 @@ import {
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
-import ShadowIcon from '../../Components/ShadowIcon';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 
 const RequestModal = ({ modalVisible, callback, navigation }) => {
     return (
@@ -28,20 +28,12 @@ const RequestModal = ({ modalVisible, callback, navigation }) => {
                         <View style={{ ...commonStyles.rowBetween, width: "100%", marginBottom: 20 }}>
                             <View style={{ ...commonStyles.rowStart }}>
                                 <Text style={{ ...commonStyles.fs13_400, color: "#909091" }}>20:19:36</Text>
-                                <View style={styles.timeDivider} />
+                                <View style={{ width: 1, height: 20, marginHorizontal: 6, backgroundColor: "#ccc" }} />
                                 <Text style={{ ...commonStyles.fs13_400, color: "#909091" }}>16-09-2022</Text>
                             </View>
-                            <TouchableOpacity
-                                style={{ marginTop: -12 }}
-                                onPress={callback}
-                            >
-                                <ShadowIcon
-                                    icon={require("../../Assets/cross.png")}
-                                    size={12}
-                                />
-                            </TouchableOpacity>
+                            <CrossSvg onPress={() => { }} />
                         </View>
-                        <View style={{ ...commonStyles.rowStart, marginTop: 22, width: "100%" }}>
+                        <View style={{ ...commonStyles.rowStart, marginTop: 22, width: "100%", marginTop: 10 }}>
                             <Text style={styles.text1}>
                                 Request Type:
                             </Text>

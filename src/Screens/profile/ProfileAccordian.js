@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { COLORS, SIZES } from '../../Constant/Color'
+import { COLORS } from '../../Constant/Color'
 import { TouchableHighlight } from 'react-native'
-import { Image } from 'react-native'
 import { StyleSheet } from 'react-native'
 import { commonStyles } from '../../utils/Styles'
+import DropdownSvg from '../../Components/svg/DropdownSvg'
 
 export default function ProfileAccordian({ title, showMasterDetails, setshowMasterDetails, callBack }) {
     return (
@@ -15,11 +15,7 @@ export default function ProfileAccordian({ title, showMasterDetails, setshowMast
                 <Text style={styles.masterDetailsText}>
                     {title}
                 </Text>
-                <Image
-                    source={require("../../Assets/up-arrow.png")}
-                    resizeMode="contain"
-                    style={{ width: 16, height: 16 }}
-                />
+                <DropdownSvg />
             </View>
         </TouchableHighlight>
     )

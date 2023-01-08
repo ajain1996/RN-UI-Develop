@@ -1,20 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React from 'react'
 import { commonStyles } from '../../utils/Styles'
-import { StyleSheet } from 'react-native'
-import { TextInput } from 'react-native'
-import { Image } from 'react-native'
 import { COLORS } from '../../Constant/Color'
+import Svg from '../../utils/Svg'
 
 export default function ProfileCUstomInput({ icon, onChange, title, placeholder }) {
     return (
         <View style={{}}>
             <Text style={styles.nameText}>{title}</Text>
             <View style={styles.nameInputContainer}>
-                <Image
-                    source={icon} resizeMode="contain"
-                    style={{ width: 24, height: 24 }}
-                />
+                <Svg width="28" height="28" source={icon} style={{ padding: 0 }} />
                 <View style={styles.inputDivider} />
                 <TextInput
                     placeholder={placeholder ? placeholder : ""}

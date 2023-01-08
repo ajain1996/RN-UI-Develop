@@ -7,9 +7,9 @@ import {
   Image,
 } from 'react-native';
 import React from 'react';
-import {styles} from './RequestModalStyle';
+import { styles } from './RequestModalStyle';
 import LinearGradient from 'react-native-linear-gradient';
-import {IMAGE} from '../../Assets/Images/map';
+import { IMAGE } from '../../Assets/Images/map';
 
 const RequestModal = props => {
   return (
@@ -44,8 +44,8 @@ const RequestModal = props => {
                   justifyContent: 'center',
                 }}>
                 <LinearGradient
-                  start={{x: 0, y: 0}}
-                  end={{x: 1, y: 0}}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 0 }}
                   colors={['#3FA9F6', '#2360F0']}
                   style={styles.linearGradient}>
                   <Text style={styles.logoutBtnText}>Go to Dashboard</Text>

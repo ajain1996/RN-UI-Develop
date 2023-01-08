@@ -9,6 +9,7 @@ import moment from 'moment/moment';
 import { Button } from 'react-native-paper';
 import WalletDatePicker from '../WalletDatePicker';
 import AddMoneyPicker from '../AddMoneyPicker';
+import BackSvg, { BackSvg2, ForwardSvg, UpArrowSvg } from '../../../Components/svg/BackSvg';
 
 export default function WalletFilterScreen({ navigation }) {
     var month = parseInt(moment().format('MM'));
@@ -105,34 +106,20 @@ export default function WalletFilterScreen({ navigation }) {
                         style={{
                             width: SIZES.width,
                             height: 365,
-                            marginTop: -365,
+                            marginTop: -350,
                             backgroundColor: 'transparent',
                         }}>
                         <View style={{ ...commonStyles.rowBetween, width: SIZES.width, paddingHorizontal: 50 }}>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    var val = moment(currMonthPassed);
-                                    val = val.subtract(1, 'months').format('YYYY-MM-DD');
-                                    setCurrMonthPassed(val);
-                                    var valmonth = parseInt(moment(val).format('MM'));
-                                    setCurrentMonth(valmonth);
-                                    console.log('setCurrMonthPassed Left', val, valmonth);
-                                }}>
-                                <Image
-                                    source={require('../../../Assets/back.png')}
-                                    style={{ width: 56, height: 56 }}
-                                />
-                            </TouchableOpacity>
+                            <BackSvg2 onPress={() => {
+                                var val = moment(currMonthPassed);
+                                val = val.subtract(1, 'months').format('YYYY-MM-DD');
+                                setCurrMonthPassed(val);
+                                var valmonth = parseInt(moment(val).format('MM'));
+                                setCurrentMonth(valmonth);
+                                console.log('setCurrMonthPassed Left', val, valmonth);
+                            }} />
 
-                            <TouchableOpacity
-                                onPress={() => {
-                                    var val = moment(currMonthPassed);
-                                    val = val.add(1, 'months').format('YYYY-MM-DD');
-                                    setCurrMonthPassed(val);
-                                    var valmonth = parseInt(moment(val).format('MM'));
-                                    setCurrentMonth(valmonth);
-                                    console.log('setCurrMonthPassed Right', val, valmonth);
-                                }}
+                            <View
                                 style={{
                                     width: 32,
                                     height: 32,
@@ -143,11 +130,15 @@ export default function WalletFilterScreen({ navigation }) {
                                     ...commonStyles.centerStyles,
                                     marginRight: 16
                                 }}>
-                                <Image
-                                    source={require('../../../Assets/forward.png')}
-                                    style={{ width: 12, height: 12 }}
-                                />
-                            </TouchableOpacity>
+                                <ForwardSvg onPress={() => {
+                                    var val = moment(currMonthPassed);
+                                    val = val.add(1, 'months').format('YYYY-MM-DD');
+                                    setCurrMonthPassed(val);
+                                    var valmonth = parseInt(moment(val).format('MM'));
+                                    setCurrentMonth(valmonth);
+                                    console.log('setCurrMonthPassed Right', val, valmonth);
+                                }} />
+                            </View>
                         </View>
                     </View>
                 </View>
@@ -156,11 +147,7 @@ export default function WalletFilterScreen({ navigation }) {
                     <View style={{ width: "100%", padding: 16, backgroundColor: "#fff", elevation: 9, shadowColor: "#999", borderRadius: 10 }}>
                         <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }}>
                             <Text style={{ ...commonStyles.fs16_500, color: COLORS.theme }}>Select Types</Text>
-                            <Image
-                                source={require("../../../Assets/up-arrow.png")}
-                                resizeMode="contain"
-                                style={{ width: 18, height: 18 }}
-                            />
+                            <UpArrowSvg />
                         </TouchableOpacity>
 
                         <View style={{ ...commonStyles.row }}>

@@ -11,6 +11,14 @@ import ProfileAccordian from './ProfileAccordian'
 import { ScrollView } from 'react-native'
 import { Button } from 'react-native-paper'
 import ProfileHeader from './ProfileHeader'
+import ProfileCircle from '../../Assets/svg/profile-circle.svg';
+import CallCalling from '../../Assets/svg/call-calling.svg';
+import SMS from '../../Assets/svg/sms.svg';
+import Cake from '../../Assets/svg/cake.svg';
+import Map from '../../Assets/svg/map.svg';
+import SecurityUser from '../../Assets/svg/security-user.svg';
+import ShieldSecurity from '../../Assets/svg/shield-security.svg';
+import Location from '../../Assets/svg/location.svg';
 
 export default function EditProfileDetailsScreen({ navigation }) {
     const [showMasterDetails, setshowMasterDetails] = React.useState(true);
@@ -19,7 +27,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
 
     return (
         <View style={{ ...commonStyles.bgFFF }}>
-            <ProfileHeader />
+            <ProfileHeader navigation={navigation} />
 
             <ScrollView>
                 <View style={{ padding: 18 }}>
@@ -36,21 +44,21 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Master name"
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/profile-circle.png")}
+                                    icon={ProfileCircle}
                                 />
                                 <View style={{ marginTop: 12 }} />
 
                                 <ProfileCUstomInput
                                     title="Master no."
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/call-calling.png")}
+                                    icon={CallCalling}
                                 />
                                 <View style={{ marginTop: 12 }} />
 
                                 <ProfileCUstomInput
                                     title="Email ID"
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/sms.png")}
+                                    icon={SMS}
                                 />
                             </View>
                             : <></>}
@@ -93,14 +101,14 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                     <ProfileCUstomInput
                                         title="Email ID"
                                         onChange={(val) => { }}
-                                        icon={require("../../Assets/sms.png")}
+                                        icon={SMS}
                                     />
                                     <View style={{ marginTop: 12 }} />
 
                                     <ProfileCUstomInput
                                         title="Birth date"
                                         onChange={(val) => { }}
-                                        icon={require("../../Assets/cake.png")}
+                                        icon={Cake}
                                     />
                                 </View>
                             </View>
@@ -121,21 +129,21 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Mobile no."
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/call-calling.png")}
+                                    icon={CallCalling}
                                 />
                                 <View style={{ marginTop: 12 }} />
 
                                 <ProfileCUstomInput
                                     title="Alt no."
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/call-calling.png")}
+                                    icon={CallCalling}
                                 />
                                 <View style={{ marginTop: 12 }} />
 
                                 <ProfileCUstomInput
                                     title="Pos type"
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/map.png")}
+                                    icon={Map}
                                 />
 
                                 <View style={{ marginTop: 12 }} />
@@ -143,7 +151,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Pos name"
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/map.png")}
+                                    icon={Map}
                                 />
 
                                 <View style={{ marginTop: 12 }} />
@@ -151,7 +159,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Aadhar no."
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/security-user.png")}
+                                    icon={SecurityUser}
                                 />
 
                                 <View style={{ marginTop: 12 }} />
@@ -159,7 +167,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Address"
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/location.png")}
+                                    icon={Location}
                                 />
 
                                 <View style={{ marginTop: 12 }} />
@@ -167,7 +175,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                 <ProfileCUstomInput
                                     title="Pan no."
                                     onChange={(val) => { }}
-                                    icon={require("../../Assets/shield-security.png")}
+                                    icon={ShieldSecurity}
                                 />
                             </View>
                             : <></>}

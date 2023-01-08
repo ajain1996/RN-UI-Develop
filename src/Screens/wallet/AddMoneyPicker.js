@@ -15,6 +15,7 @@ import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import ShadowBg from '../../Components/ShadowBg';
+import { AddMoneySvg } from '../../Components/svg/BackSvg';
 
 const AddMoneyPicker = ({ modalVisible, callback, setModalVisible }) => {
     return (
@@ -42,11 +43,7 @@ const AddMoneyPicker = ({ modalVisible, callback, setModalVisible }) => {
                                     source={require('../../Assets/add_money.png')}
                                     style={{ width: 130, height: 130, ...commonStyles.centerStyles }}
                                 >
-                                    <Image
-                                        source={require('../../Assets/moneys.png')}
-                                        resizeMode="contain"
-                                        style={{ width: 50, height: 50 }}
-                                    />
+                                    <AddMoneySvg />
                                 </ImageBackground>
                             </View>
                             <Text />

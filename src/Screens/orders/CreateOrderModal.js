@@ -16,6 +16,9 @@ import CustomInputBox from '../../Components/CustomInputBox';
 import { Dropdown } from 'react-native-element-dropdown'
 import { dropdownStyles } from '../../utils/dropdownStyles';
 import CustomDropdownComponent from '../../Components/CustomDropdownComponent';
+import { CrossSvg } from '../../Components/svg/BackSvg';
+import Svg from '../../utils/Svg';
+import Cross from '../../Assets/svg/cross.svg';
 
 export const data = [
     { label: 'HDFC', value: 'HDFC' },
@@ -49,7 +52,7 @@ const CreateOrderModal = ({ modalVisible, callback, navigation }) => {
                             <View style={{ ...commonStyles.rowStart }}>
                                 <Text style={{ ...commonStyles.fs16_500 }}>Create Order</Text>
                             </View>
-                            <Crossbtn callback={callback} />
+                            <CrossSvg onPress={() => { }} />
                         </View>
                         <View style={{ width: '105%', alignItems: 'center' }}>
                             <CustomDropdownComponent

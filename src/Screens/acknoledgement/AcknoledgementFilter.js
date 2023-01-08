@@ -8,6 +8,9 @@ import InventoryFilterHeader from '../inventory/InventoryFilterHeader';
 import { CustomCheckTickbox2 } from '../../Components/CustomCheckbox';
 
 export default function AcknoledgementFilter({ navigation }) {
+    const [showSelectedBanks, setshowSelectedBanks] = React.useState(true);
+    const [showVehicleClass, setShowVehicleClass] = React.useState(true);
+
     return (
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryFilterHeader navigation={navigation} />
@@ -15,7 +18,9 @@ export default function AcknoledgementFilter({ navigation }) {
             <ScrollView>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={styles.section1}>
-                        <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }}>
+                        <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }} onPress={() => {
+                            setshowSelectedBanks(!showSelectedBanks)
+                        }}>
                             <Text style={styles.title}>Select Banks</Text>
                             <Image
                                 source={require("../../Assets/up-arrow.png")}
@@ -24,33 +29,35 @@ export default function AcknoledgementFilter({ navigation }) {
                             />
                         </TouchableOpacity>
 
-                        <View style={{ ...commonStyles.row }}>
-                            <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Paytm bank</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={styles.cross}
-                                />
+                        {showSelectedBanks ? <>
+                            <View style={{ ...commonStyles.row }}>
+                                <View style={styles.typeBtn}>
+                                    <Text style={{ ...commonStyles.fs12_400 }}>Paytm bank</Text>
+                                    <Image
+                                        source={require("../../Assets/cross.png")}
+                                        style={styles.cross}
+                                    />
+                                </View>
+                                <View style={{ width: 14 }} />
+                                <View style={styles.typeBtn}>
+                                    <Text style={{ ...commonStyles.fs12_400 }}>Axis bank</Text>
+                                    <Image
+                                        source={require("../../Assets/cross.png")}
+                                        style={styles.cross}
+                                    />
+                                </View>
                             </View>
-                            <View style={{ width: 14 }} />
-                            <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Axis bank</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={styles.cross}
-                                />
+                            <View style={{ height: 14 }} />
+                            <View style={{ ...commonStyles.rowStart }}>
+                                <View style={styles.typeBtn}>
+                                    <Text style={{ ...commonStyles.fs12_400 }}>State bank of india</Text>
+                                    <Image
+                                        source={require("../../Assets/cross.png")}
+                                        style={styles.cross}
+                                    />
+                                </View>
                             </View>
-                        </View>
-                        <View style={{ height: 14 }} />
-                        <View style={{ ...commonStyles.rowStart }}>
-                            <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>State bank of india</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={styles.cross}
-                                />
-                            </View>
-                        </View>
+                        </> : <></>}
                     </View>
                 </View>
 
@@ -73,7 +80,9 @@ export default function AcknoledgementFilter({ navigation }) {
 
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={styles.section1}>
-                        <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }}>
+                        <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }} onPress={() => {
+                            setShowVehicleClass(!showVehicleClass)
+                        }}>
                             <Text style={styles.title}>Vehicle class</Text>
                             <Image
                                 source={require("../../Assets/up-arrow.png")}
@@ -82,7 +91,7 @@ export default function AcknoledgementFilter({ navigation }) {
                             />
                         </TouchableOpacity>
 
-                        <View style={{ ...commonStyles.row }}>
+                        {showVehicleClass ? <View style={{ ...commonStyles.row }}>
                             <View style={styles.typeBtn}>
                                 <Text style={{ ...commonStyles.fs12_400 }}>VC-1</Text>
                                 <Image
@@ -108,7 +117,7 @@ export default function AcknoledgementFilter({ navigation }) {
                                     />
                                 </View>
                             </View>
-                        </View>
+                        </View> : <></>}
                     </View>
                 </View>
 

@@ -11,7 +11,8 @@ import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
 import Crossbtn from '../../Components/Crossbtn';
-import { Image } from 'react-native';
+import Order2 from "../../Assets/svg/order2.svg";
+import Svg from '../../utils/Svg';
 
 const CompleteOrderModal = ({ modalVisible, callback, editCallback }) => {
     return (
@@ -30,11 +31,7 @@ const CompleteOrderModal = ({ modalVisible, callback, editCallback }) => {
                             <Crossbtn callback={callback} />
                         </View>
                         <View style={{ alignItems: "center", width: "70%", marginTop: 14 }}>
-                            <Image
-                                source={require("../../Assets/order2.png")}
-                                resizeMode="contain"
-                                style={{ width: 90, height: 90, marginBottom: 20 }}
-                            />
+                            <Svg width="90" height="90" source={Order2} />
 
                             <Text style={{ ...commonStyles.fs15_400, textAlign: "center", lineHeight: 22 }}>
                                 You don't have suficient balance for complete order

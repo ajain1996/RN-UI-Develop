@@ -3,7 +3,6 @@ import React from 'react'
 import { commonStyles } from '../../utils/Styles'
 import { SIZES } from '../../Constant/Color'
 import BackBtn from '../../Components/BackBtn'
-import { DownloadCircleSvg } from '../../Components/svg/BackSvg'
 
 export default function InventoryHeader({ title, navigation }) {
     return (
@@ -18,7 +17,11 @@ export default function InventoryHeader({ title, navigation }) {
             >
                 <View style={{ ...commonStyles.rowBetween }}>
                     <Text style={{ ...commonStyles.fs14_600 }}>Excel</Text>
-                    <DownloadCircleSvg />
+                    <Image
+                        source={require("../../Assets/download.png")}
+                        resizeMode="contain"
+                        style={{ width: 35, height: 35, marginLeft: 10 }}
+                    />
                 </View>
             </ImageBackground>
         </View>

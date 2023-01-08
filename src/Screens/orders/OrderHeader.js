@@ -3,6 +3,7 @@ import React from 'react'
 import { commonStyles } from '../../utils/Styles'
 import ImgTap from '../../Components/ImgTap'
 import BackBtn from '../../Components/BackBtn'
+import PlusCircleSvg from '../../Components/svg/PlusCircleSvg'
 
 export default function OrderHeader({ title, navigation }) {
     return (
@@ -11,10 +12,7 @@ export default function OrderHeader({ title, navigation }) {
                 <BackBtn onPress={() => { navigation.goBack() }} />
                 <Text style={{ ...commonStyles.fs16_500 }}>{title}</Text>
 
-                <ImgTap
-                    icon={require("../../Assets/plus.png")}
-                    onPress={() => { }}
-                />
+                <PlusCircleSvg onPress={() => { }} />
             </View>
         </>
     )

@@ -11,7 +11,9 @@ import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
 import Crossbtn from '../../Components/Crossbtn';
-import { Image } from 'react-native';
+import Tick from '../../Assets/svg/tick.svg';
+import GreenCircle from '../../Assets/svg/green-circle.svg';
+import Svg from '../../utils/Svg';
 
 const OrderConfirmModal = ({ modalVisible, callback, navigation }) => {
     const [selectBank, setselectBank] = React.useState(false);
@@ -32,11 +34,11 @@ const OrderConfirmModal = ({ modalVisible, callback, navigation }) => {
                             <Crossbtn callback={callback} />
                         </View>
                         <View style={{ alignItems: "center", width: "100%", marginTop: 14 }}>
-                            <Image
-                                source={require("../../Assets/tick-mark.png")}
-                                resizeMode="contain"
-                                style={{ width: 100, height: 100, marginBottom: 8 }}
-                            />
+                            <Svg width="100" height="100" source={GreenCircle} />
+                            <View style={{ position: "absolute", top: 20 }}>
+                                <Svg width="68" height="68" source={Tick} />
+                            </View>
+                            <Text />
 
                             {renderText("Your order has been submitted successfully")}
                         </View>

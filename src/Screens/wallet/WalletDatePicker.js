@@ -15,8 +15,9 @@ import moment from 'moment';
 import { Button } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import ShadowBg from '../../Components/ShadowBg';
+import { BackSvg2, ForwardSvg } from '../../Components/svg/BackSvg';
 
-const WalletDatePicker = ({ modalVisible, callback, setModalVisible }) => {
+const WalletDatePicker = ({ modalVisible, callback }) => {
     var month = parseInt(moment().format('MM'));
     var [currMonthPassed, setCurrMonthPassed] = React.useState(new Date());
     const [currentMonth, setCurrentMonth] = React.useState(month);
@@ -117,34 +118,20 @@ const WalletDatePicker = ({ modalVisible, callback, setModalVisible }) => {
                                     style={{
                                         width: SIZES.width,
                                         height: SIZES.width * 1.29,
-                                        marginTop: -SIZES.width / 1.13,
+                                        marginTop: -SIZES.width / 1.18,
                                         backgroundColor: 'transparent',
                                     }}>
                                     <View style={{ ...commonStyles.rowBetween, width: SIZES.width, paddingHorizontal: 50 }}>
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                var val = moment(currMonthPassed);
-                                                val = val.subtract(1, 'months').format('YYYY-MM-DD');
-                                                setCurrMonthPassed(val);
-                                                var valmonth = parseInt(moment(val).format('MM'));
-                                                setCurrentMonth(valmonth);
-                                                console.log('setCurrMonthPassed Left', val, valmonth);
-                                            }}>
-                                            <Image
-                                                source={require('../../Assets/back.png')}
-                                                style={{ width: 56, height: 56 }}
-                                            />
-                                        </TouchableOpacity>
+                                        <BackSvg2 onPress={() => {
+                                            var val = moment(currMonthPassed);
+                                            val = val.subtract(1, 'months').format('YYYY-MM-DD');
+                                            setCurrMonthPassed(val);
+                                            var valmonth = parseInt(moment(val).format('MM'));
+                                            setCurrentMonth(valmonth);
+                                            console.log('setCurrMonthPassed Left', val, valmonth);
+                                        }} />
 
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                var val = moment(currMonthPassed);
-                                                val = val.add(1, 'months').format('YYYY-MM-DD');
-                                                setCurrMonthPassed(val);
-                                                var valmonth = parseInt(moment(val).format('MM'));
-                                                setCurrentMonth(valmonth);
-                                                console.log('setCurrMonthPassed Right', val, valmonth);
-                                            }}
+                                        <View
                                             style={{
                                                 width: 32,
                                                 height: 32,
@@ -155,11 +142,15 @@ const WalletDatePicker = ({ modalVisible, callback, setModalVisible }) => {
                                                 ...commonStyles.centerStyles,
                                                 marginRight: 16
                                             }}>
-                                            <Image
-                                                source={require('../../Assets/forward.png')}
-                                                style={{ width: 12, height: 12 }}
-                                            />
-                                        </TouchableOpacity>
+                                            <ForwardSvg onPress={() => {
+                                                var val = moment(currMonthPassed);
+                                                val = val.add(1, 'months').format('YYYY-MM-DD');
+                                                setCurrMonthPassed(val);
+                                                var valmonth = parseInt(moment(val).format('MM'));
+                                                setCurrentMonth(valmonth);
+                                                console.log('setCurrMonthPassed Right', val, valmonth);
+                                            }} />
+                                        </View>
                                     </View>
                                 </View>
 

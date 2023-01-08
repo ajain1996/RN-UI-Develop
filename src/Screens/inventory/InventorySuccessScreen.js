@@ -3,22 +3,22 @@ import React from 'react'
 import { commonStyles } from '../../utils/Styles'
 import { Button } from 'react-native-paper'
 import { COLORS, SIZES } from '../../Constant/Color'
+import Tick from '../../Assets/svg/tick.svg';
+import GreenCircle from '../../Assets/svg/green-circle.svg';
+import Svg from '../../utils/Svg'
+import { CrossSvg } from '../../Components/svg/BackSvg'
 
 export default function InventorySuccessScreen({ navigation }) {
     return (
         <View style={{ ...commonStyles.bgFFF, justifyContent: 'space-between', paddingBottom: 28 }}>
-            <Image
-                source={require("../../Assets/back.png")}
-                resizeMode="contain"
-                style={{ width: 70, height: 70 }}
-            />
+            <CrossSvg onPress={() => { }} />
 
             <View style={{ alignItems: 'center' }}>
-                <Image
-                    source={require("../../Assets/tick-mark.png")}
-                    resizeMode="contain"
-                    style={{ width: 140, height: 140 }}
-                />
+                <Svg width="120" height="120" source={GreenCircle} />
+                <View style={{ position: "absolute", top: 20 }}>
+                    <Svg width="86" height="86" source={Tick} />
+                </View>
+                <Text />
 
                 <View style={{ width: "70%", marginTop: 20 }}>
                     <Text style={{ ...commonStyles.fs15_400, textAlign: "center", lineHeight: 24 }}>

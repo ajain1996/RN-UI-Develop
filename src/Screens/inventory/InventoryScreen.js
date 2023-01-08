@@ -8,6 +8,8 @@ import { COLORS } from '../../Constant/Color';
 import { Button } from 'react-native-paper';
 import ReturnModal from './ReturnModal';
 import { StatusBar } from 'react-native';
+import Svg from '../../utils/Svg';
+import SecurityUser from '../../Assets/svg/security-user.svg';
 
 export default function InventroyScreen({ navigation }) {
     const [returnmodal, setreturnmodal] = React.useState(false);
@@ -36,10 +38,7 @@ export default function InventroyScreen({ navigation }) {
                             <View style={styles.mainWrapper} key={index}>
                                 <View style={styles.priceWrapper}>
                                     <View style={{ ...commonStyles.rowStart }}>
-                                        <Image
-                                            source={require('../../Assets/security-user.png')}
-                                            style={{ width: 24, height: 24 }}
-                                        />
+                                        <Svg width="24" height="24" source={SecurityUser} style={{ padding: 0 }} />
                                         <View style={{ marginLeft: 8 }}>
                                             <Text style={{ ...commonStyles.fs14_600 }}>
                                                 606060-00B-252566

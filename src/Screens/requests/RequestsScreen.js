@@ -8,6 +8,8 @@ import ProfileAccordian from '../profile/ProfileAccordian'
 import { COLORS } from '../../Constant/Color'
 import { Button } from 'react-native-paper'
 import RequestModal from './RequestModal'
+import Svg from '../../utils/Svg'
+import Return from '../../Assets/svg/return.svg';
 
 export default function RequestsScreen({ navigation }) {
     const [requestType, setrequestType] = React.useState(false);
@@ -35,17 +37,15 @@ export default function RequestsScreen({ navigation }) {
                         callBack={() => { }}
                     />
 
-                    {
+                    {requestType ?
                         [1, 2, 3, 4, 5, 6].map((item, index) => {
                             return (
                                 <View style={styles.requestItem} key={index}>
                                     <View style={{ ...commonStyles.rowBetween }}>
                                         <View style={{ ...commonStyles.rowStart }}>
-                                            <Image
-                                                source={require("../../Assets/return.png")}
-                                                resizeMode="contain"
-                                                style={{ width: 16, height: 16, marginRight: 10 }}
-                                            />
+                                            <View style={{ marginRight: 10 }}>
+                                                <Svg width="16" height="16" source={Return} />
+                                            </View>
                                             <Text style={{ ...commonStyles.fs13_400, color: "#909091" }}>Return request</Text>
                                         </View>
 
@@ -73,7 +73,7 @@ export default function RequestsScreen({ navigation }) {
                                 </View>
                             );
                         })
-                    }
+                        : <></>}
                 </View>
                 <Text />
             </ScrollView>

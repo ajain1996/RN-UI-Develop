@@ -8,6 +8,8 @@ import BgIcon from '../../Components/BgIcon';
 import WalletFilterIcon from './WalletFilterIcon';
 import WalletSearch from './WalletSearch';
 import ShadowBg from '../../Components/ShadowBg';
+import PaySuccessSvg from '../../Components/svg/PaySuccessSvg';
+import PayFailedSvg from '../../Components/svg/PayFailedSvg';
 
 export default function WalletScreen({ navigation }) {
     const [debitCredit, setdebitCredit] = React.useState('All');
@@ -123,15 +125,10 @@ export default function WalletScreen({ navigation }) {
                                 <View style={styles.historyItem}>
                                     <View style={{ ...commonStyles.rowBetween }}>
                                         <View style={{ ...commonStyles.rowStart }}>
-                                            <BgIcon
-                                                icon={
-                                                    item?.type === 'credit'
-                                                        ? require('../../Assets/received.png')
-                                                        : require('../../Assets/send.png')
-                                                }
-                                                bgColor={item?.type === 'credit' ? '#DEF1EA' : '#F2E7EB'}
-                                            // F2E7EB
-                                            />
+                                            {/* pay-success */}
+                                            {item?.type === 'credit'
+                                                ? <PaySuccessSvg />
+                                                : <PayFailedSvg />}
                                             <Text style={{ ...commonStyles.fs16_500, marginLeft: 10 }}>
                                                 {item?.name}
                                             </Text>

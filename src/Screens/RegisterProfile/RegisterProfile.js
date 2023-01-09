@@ -99,7 +99,7 @@ const RegisterProfile = () => {
                 handleStepThree();
               }}
               style={styles.disableButton}>
-              <Text style={styles.numText}>02</Text>
+              <Text style={styles.numText}>03</Text>
               <Text style={styles.disableText}>STEP</Text>
             </TouchableOpacity>
           )}

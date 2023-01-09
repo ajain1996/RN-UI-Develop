@@ -17,4 +17,5 @@ export const IMAGE = {
   addImage: require('../Images/addImage.png'),
   house: require('../Images/house.png'),
   hidden: require('../hidden.png'),
+  uploadId: require("../wallet-details.png")
 };

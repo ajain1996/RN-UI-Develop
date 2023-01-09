@@ -38,6 +38,7 @@ import EditProfileDetailsScreen from '../Screens/profile/EditProfileDetailsScree
 import HomeDashboardScreen from '../Screens/home/HomeDashboardScreen';
 import VerifyOTPonMobile from '../Screens/VerifyOTP/VerifyOTPonMobile';
 import VirtualRCScreen from '../Screens/rc/VirtualRCScreen';
+import TagRegistrationScreen1 from '../Screens/tag/TagRegistrationScreen';
 
 const Stack = createStackNavigator();
 
@@ -51,7 +52,7 @@ export default function AuthStack() {
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.bg} />
       <Stack.Navigator
         screenOptions={screenOptions}
-        initialRouteName={"OrderSummaryScreen"}
+        initialRouteName={"Register"}
       >
         <Stack.Screen name="HomeDashboardScreen" component={HomeDashboardScreen} />
         <Stack.Screen name="EditProfileDetailsScreen" component={EditProfileDetailsScreen} />
@@ -74,6 +75,7 @@ export default function AuthStack() {
         <Stack.Screen name="CustomerRegistrationScreen" component={CustomerRegistrationScreen} />
         <Stack.Screen name="TagRegistrationScreen" component={TagRegistrationScreen} />
         <Stack.Screen name="TagReplacementScreen" component={TagReplacementScreen} />
+        <Stack.Screen name="TagRegistrationScreen1" component={TagRegistrationScreen1} />
         <Stack.Screen name="TagReplacementScreen1" component={TagReplacementScreen1} />
         <Stack.Screen name="FASTagRechargeScreen" component={FASTagRechargeScreen} />
         <Stack.Screen name="NPCITagStatusScreen" component={NPCITagStatusScreen} />

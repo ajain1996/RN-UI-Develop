@@ -7,18 +7,10 @@ import { Image } from 'react-native'
 import { FlatList } from 'react-native'
 import { COLORS, SIZES } from '../../Constant/Color'
 import { HL1, HL2, HL3, HL4, HL5, HL6, } from '../../utils/ImageManager'
-import SvgUri from 'react-native-svg-uri';
 import ShadowBg from '../../Components/ShadowBg'
 import { Button } from 'react-native-paper'
-import CustomPieChart from '../../Components/CustomPieChart'
-import {
-    LineChart,
-    BarChart,
-    PieChart,
-    ProgressChart,
-    ContributionGraph,
-    StackedBarChart
-} from "react-native-chart-kit";
+import Svg from '../../utils/Svg'
+import HomeDashBg from '../../Assets/svg/home-dash-bg.svg';
 
 const homelist = [
     { image: HL1 },
@@ -28,55 +20,6 @@ const homelist = [
     { image: HL5 },
     { image: HL6 },
 ]
-
-const data = [
-    {
-        name: "Seoul",
-        population: 21500000,
-        color: "rgba(131, 167, 234, 1)",
-        legendFontColor: "#7F7F7F",
-        legendFontSize: 15
-    },
-    {
-        name: "Toronto",
-        population: 2800000,
-        color: "#F00",
-        legendFontColor: "#7F7F7F",
-        legendFontSize: 15
-    },
-    {
-        name: "Beijing",
-        population: 527612,
-        color: "red",
-        legendFontColor: "#7F7F7F",
-        legendFontSize: 15
-    },
-    {
-        name: "New York",
-        population: 8538000,
-        color: "#ffffff",
-        legendFontColor: "#7F7F7F",
-        legendFontSize: 15
-    },
-    {
-        name: "Moscow",
-        population: 11920000,
-        color: "rgb(0, 0, 255)",
-        legendFontColor: "#7F7F7F",
-        legendFontSize: 15
-    }
-];
-
-const chartConfig = {
-    backgroundGradientFrom: "#1E2923",
-    backgroundGradientFromOpacity: 0,
-    backgroundGradientTo: "#08130D",
-    backgroundGradientToOpacity: 0.5,
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false // optional
-};
 
 export default function HomeDashboardScreen({ navigation }) {
     const [debitCredit, setdebitCredit] = React.useState('today');
@@ -94,19 +37,16 @@ export default function HomeDashboardScreen({ navigation }) {
                     renderItem={({ item }) => {
                         return (
                             <View style={styles.section}>
-                                <SvgUri width={SIZES.width / 5.0} height={SIZES.width / 4.2} source={item?.image} />
+                                <Svg width={SIZES.width / 5.0} height={SIZES.width / 4.2} source={item?.image} />
                             </View>
                         );
                     }}
                     ListHeaderComponent={
                         <View>
                             <HomeCarousel />
-                            <View style={{ alignItems: 'center' }}>
-                                <Image
-                                    source={require("../../Assets/home-tags.png")}
-                                    resizeMode="contain"
-                                    style={{ width: SIZES.width }}
-                                />
+                            <View style={{ ...commonStyles.rowBetween }}>
+                                <RenderHomeTags number={55} text="Registered Tag" />
+                                <RenderHomeTags number={12} text="Tag in Stock" />
                             </View>
                         </View>
                     }
@@ -212,6 +152,20 @@ export default function HomeDashboardScreen({ navigation }) {
     )
 }
 
+const RenderHomeTags = ({ number, text }) => {
+    return (
+        <View>
+            <>
+                <Svg width={SIZES.width / 1.95} height={150} source={HomeDashBg} />
+                <View style={styles.homeTagStyle}>
+                    <Text style={{ fontSize: 40, fontWeight: "700", color: "#fff", marginBottom: 5 }}>{number}</Text>
+                    <Text style={{ fontSize: 16, fontWeight: "400", color: "#fff" }}>{text}</Text>
+                </View>
+            </>
+        </View>
+    );
+}
+
 const styles = StyleSheet.create({
     section: {
         elevation: 9, shadowColor: "#999",
@@ -233,4 +187,11 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         ...commonStyles.centerStyles,
     },
+    homeTagStyle: {
+        width: SIZES.width / 1.95,
+        height: 150,
+        position: "absolute",
+        top: 15, left: 18,
+        padding: 12
+    }
 })

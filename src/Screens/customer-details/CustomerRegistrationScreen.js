@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import CustomHeader from '../../Components/CustomHeader'
 import { commonStyles } from '../../utils/Styles'
@@ -9,10 +9,20 @@ import ProfileAccordian from '../profile/ProfileAccordian'
 import { StyleSheet } from 'react-native'
 import { Button } from 'react-native-paper'
 import { Image } from 'react-native'
+import PersonalLeaveDatePicker from '../../Components/DatePicker/CustomDatePicker'
+import moment from 'moment'
+import { Dropdown } from 'react-native-element-dropdown';
+import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
+import { data } from '../orders/CreateOrderModal'
 
 export default function CustomerRegistrationScreen({ navigation }) {
     const [vehicleNo, setvehicleNo] = React.useState(false);
     const [vehicleClass, setvehicleClass] = React.useState(false);
+
+    const [dateOfBirth, setDateOfBirth] = React.useState({
+        initialDate: moment().format("DD-MM-YYYY"),
+        dob: "",
+    });
 
     return (
         <View style={{ ...commonStyles.bgFFF }}>
@@ -53,14 +63,13 @@ export default function CustomerRegistrationScreen({ navigation }) {
                     />
                     <Text />
 
-                    <Text style={{ ...commonStyles.fs14_400, color: "#999" }}>
+                    <Text style={{ ...commonStyles.fs14_400, color: "#999", marginBottom: -12 }}>
                         Vehicle class
                     </Text>
-                    <ProfileAccordian
-                        showMasterDetails={vehicleClass}
-                        setshowMasterDetails={setvehicleClass}
-                        title="Vehicle class"
-                        callBack={() => { }}
+                    <CustomDropdownComponent
+                        placeholder="Vehicle class"
+                        data={data}
+                        width={SIZES.width / 1.1}
                     />
                     <Text />
 
@@ -74,11 +83,22 @@ export default function CustomerRegistrationScreen({ navigation }) {
                         callBack={() => { }}
                     />
 
-                    <CustomInputBox
+                    <PersonalLeaveDatePicker
                         heading="Date of birth"
-                        placeholder="Enter date of birth"
-                        width={SIZES.width / 1.1}
-                        onChange={() => { }}
+                        placeholderText="Date of birth"
+                        minimumDate={'24-12-1996'}
+                        maximumDate={"24-12-2050"}
+                        initialDate={dateOfBirth?.initialDate}
+                        selectedVal={dateOfBirth?.dob}
+                        isStart="yes"
+                        // error={startDateError}
+                        onDateSelected={function (val) {
+                            setDateOfBirth({
+                                ...dateOfBirth,
+                                dob: moment(val).format('DD-MM-YYYY'),
+                                initialDate: moment(val).format('DD-MM-YYYY')
+                            });
+                        }}
                     />
 
                     <CustomInputBox

@@ -4,7 +4,7 @@ import ShadowBg from './ShadowBg'
 import { SIZES } from '../Constant/Color'
 import { commonStyles } from '../utils/Styles'
 
-export default function CustomInputBox({ heading, placeholder, onChange, width }) {
+export default function CustomInputBox({ heading, placeholder, onChange, width, defaultValue }) {
     return (
         <View style={{ alignItems: "flex-start", marginTop: 16 }}>
             <Text style={{ ...commonStyles.fs13_400, color: "#999", marginBottom: 4 }}>
@@ -20,6 +20,7 @@ export default function CustomInputBox({ heading, placeholder, onChange, width }
                         placeholder={placeholder}
                         placeholderTextColor="#999"
                         onChangeText={onChange}
+                        defaultValue={defaultValue}
                         style={{
                             fontSize: 14, color: "#000",
                             paddingHorizontal: 16

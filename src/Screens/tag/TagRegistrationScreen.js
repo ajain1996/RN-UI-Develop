@@ -9,8 +9,10 @@ import { StyleSheet } from 'react-native'
 import RichText from '../../Components/RichText'
 import { Image } from 'react-native'
 import { Button } from 'react-native-paper'
+import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
+import { data } from '../orders/CreateOrderModal'
 
-export default function TagReplacementScreen1({ navigation }) {
+export default function TagRegistrationScreen1({ navigation }) {
     return (
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Tag Registration" navigation={navigation} />
@@ -51,12 +53,15 @@ export default function TagReplacementScreen1({ navigation }) {
                         onChange={() => { }}
                     />
 
-                    <CustomInputBox
-                        heading="Vehicle class"
-                        placeholder="Enter vehicle class"
+                    <Text style={{ ...commonStyles.fs13_400, color: "#999", marginBottom: -12, marginTop: 12 }}>
+                        Vehicle class
+                    </Text>
+                    <CustomDropdownComponent
+                        placeholder="Vehicle class"
+                        data={data}
                         width={SIZES.width / 1.1}
-                        onChange={() => { }}
                     />
+                    <View style={{ marginBottom: -18 }} />
 
                     <CustomInputBox
                         heading="Vehicle type"

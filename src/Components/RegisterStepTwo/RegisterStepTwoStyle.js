@@ -60,10 +60,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cardText: {
-    fontWeight: '600',
-    fontSize: 16,
+    fontWeight: '500',
+    fontSize: 14,
     textAlign: 'center',
-    color: "#63798E"
+    color: "#63798E",
+    paddingHorizontal: 20
   },
   addImage: {
     width: 50,

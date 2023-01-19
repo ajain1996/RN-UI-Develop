@@ -20,7 +20,7 @@ export default function VehicleDetailsScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Vehicle Details" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingTop: 4 }}>
                     <View style={styles.selectWrapper}>
                         <ProfileAccordian

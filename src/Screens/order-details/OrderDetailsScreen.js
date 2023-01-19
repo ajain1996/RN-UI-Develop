@@ -18,7 +18,7 @@ export default function OrderDetailsScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryHeader title="Order Details" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={styles.orderMenu}>
                         <Text style={styles.orderId}>

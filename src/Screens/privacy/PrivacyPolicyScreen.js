@@ -16,7 +16,7 @@ export default function PrivacyPolicyScreen({ navigation }) {
                 navigation={navigation}
             />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingBottom: 16, paddingTop: 12 }}>
                     <View style={{ elevation: 9, shadowColor: "#999", borderRadius: 20, backgroundColor: COLORS.bg }}>
                         <ProfileAccordian

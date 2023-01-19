@@ -12,7 +12,7 @@ export default function Register({ navigation }) {
   return (
     <View style={styles.mainView}>
       <Header isBack={true} title={'Enter details to Register'} />
-      <ScrollView>
+      <ScrollView keyboardShouldPersistTaps={'always'}>
         <View style={styles.footerView}>
           <ProfileCUstomInput
             title="Please enter full name"

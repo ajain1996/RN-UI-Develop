@@ -17,7 +17,7 @@ export default function OrderSummaryScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <OrderHeader title="Order Summary" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View
                     style={{
                         paddingHorizontal: 16,

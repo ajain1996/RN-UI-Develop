@@ -17,7 +17,7 @@ export default function FASTagRechargeScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="FASTag Recharge" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Bank Name"

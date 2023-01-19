@@ -3,13 +3,13 @@ import React from 'react'
 import { COLORS, SIZES } from '../../Constant/Color'
 import { commonStyles } from '../../utils/Styles'
 import { Button } from 'react-native-paper'
-import BackBtn from '../../Components/BackBtn'
+import { BackSvg2 } from '../../Components/svg/BackSvg'
 
 export default function VirtualRCScreen() {
     return (
         <View style={{ ...commonStyles.bgFFF }}>
-            <View style={{ ...commonStyles.rowBetween, paddingLeft: 6, paddingRight: 20 }}>
-                <BackBtn onPress={() => { }} />
+            <View style={{ ...commonStyles.rowBetween, paddingLeft: 6, paddingHorizontal: 20 }}>
+                <BackSvg2 onPress={() => { }} />
 
                 <Image
                     source={require("../../Assets/rc-logo.jpg")}
@@ -23,7 +23,7 @@ export default function VirtualRCScreen() {
                     style={{ width: 24, height: 24 }}
                 />
             </View>
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={styles.qrContainer}>
                     <Text style={{ ...commonStyles.fs15_700 }}>Virtual RC</Text>
                     <Image

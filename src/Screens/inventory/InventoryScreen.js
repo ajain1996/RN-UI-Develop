@@ -19,7 +19,7 @@ export default function InventroyScreen({ navigation }) {
             <InventoryHeader title="Requests" navigation={navigation} />
             <StatusBar backgroundColor={COLORS.bg} barStyle="dark-content" />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />

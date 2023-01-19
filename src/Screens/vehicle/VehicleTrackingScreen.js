@@ -13,7 +13,7 @@ export default function VehicleTrackingScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Vehicle Tracking" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Track with"

@@ -11,6 +11,8 @@ import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
 import ShadowIcon from '../../Components/ShadowIcon';
+import Crossbtn from '../../Components/Crossbtn';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 
 const ReturnModal = ({ modalVisible, callback, navigation }) => {
     return (
@@ -29,12 +31,9 @@ const ReturnModal = ({ modalVisible, callback, navigation }) => {
                             style={{ alignItems: "flex-end", width: "100%", marginTop: -12 }}
                             onPress={callback}
                         >
-                            <ShadowIcon
-                                icon={require("../../Assets/cross.png")}
-                                size={12}
-                            />
+                            <CrossSvg onPress={() => { }} />
                         </TouchableOpacity>
-                        <View style={{ alignItems: "center", width: "70%", marginTop: 15 }}>
+                        <View style={{ alignItems: "center", width: "70%", marginTop: 18 }}>
                             <Text style={styles.text1}>
                                 Are you sure you want to return tag serial no.
                             </Text>

@@ -16,7 +16,7 @@ export default function OrdersScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <OrderHeader title="Order" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />

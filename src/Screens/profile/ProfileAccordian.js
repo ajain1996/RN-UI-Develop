@@ -4,7 +4,7 @@ import { COLORS } from '../../Constant/Color'
 import { TouchableHighlight } from 'react-native'
 import { StyleSheet } from 'react-native'
 import { commonStyles } from '../../utils/Styles'
-import DropdownSvg from '../../Components/svg/DropdownSvg'
+import DropdownSvg, { UpwardSvg } from '../../Components/svg/DropdownSvg'
 
 export default function ProfileAccordian({ title, showMasterDetails, setshowMasterDetails, callBack }) {
     return (
@@ -15,7 +15,9 @@ export default function ProfileAccordian({ title, showMasterDetails, setshowMast
                 <Text style={styles.masterDetailsText}>
                     {title}
                 </Text>
-                <DropdownSvg />
+                {showMasterDetails
+                    ? <DropdownSvg />
+                    : <UpwardSvg />}
             </View>
         </TouchableHighlight>
     )

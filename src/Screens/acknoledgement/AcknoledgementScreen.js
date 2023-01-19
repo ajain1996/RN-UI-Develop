@@ -57,7 +57,7 @@ export default function AcknoledgementScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryHeader title="Acknoledgement" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />

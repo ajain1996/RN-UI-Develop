@@ -10,6 +10,7 @@ import { Button } from 'react-native-paper';
 import WalletDatePicker from '../WalletDatePicker';
 import AddMoneyPicker from '../AddMoneyPicker';
 import BackSvg, { BackSvg2, ForwardSvg, UpArrowSvg } from '../../../Components/svg/BackSvg';
+import { CrossSvg2 } from '../../../Components/Crossbtn';
 
 export default function WalletFilterScreen({ navigation }) {
     var month = parseInt(moment().format('MM'));
@@ -27,7 +28,7 @@ export default function WalletFilterScreen({ navigation }) {
             <StatusBar backgroundColor="#fff" barStyle="dark-content" />
             <WalletFilterHeader navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ padding: 30 }}>
                     <Text style={{ ...commonStyles.fs18_500, color: COLORS.theme }}>
                         Date
@@ -152,29 +153,20 @@ export default function WalletFilterScreen({ navigation }) {
 
                         <View style={{ ...commonStyles.row }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Wallet Load</Text>
-                                <Image
-                                    source={require("../../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Wallet Load</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Tag recharge</Text>
-                                <Image
-                                    source={require("../../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Tag recharge</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                         </View>
                         <View style={{ height: 14 }} />
                         <View style={{ ...commonStyles.rowStart }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Tag cost</Text>
-                                <Image
-                                    source={require("../../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Tag cost</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                         </View>
                     </View>

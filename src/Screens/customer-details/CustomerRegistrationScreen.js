@@ -14,6 +14,8 @@ import moment from 'moment'
 import { Dropdown } from 'react-native-element-dropdown';
 import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
 import { data } from '../orders/CreateOrderModal'
+import ShadowBg from '../../Components/ShadowBg'
+import { TextInput } from 'react-native'
 
 export default function CustomerRegistrationScreen({ navigation }) {
     const [vehicleNo, setvehicleNo] = React.useState(false);
@@ -28,7 +30,7 @@ export default function CustomerRegistrationScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Customer Registration" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Mobile number"
@@ -37,13 +39,50 @@ export default function CustomerRegistrationScreen({ navigation }) {
                         onChange={() => { }}
                     />
 
-                    <CustomInputBox
-                        heading="Tag serial number"
-                        placeholder="Enter serial number"
-                        width={SIZES.width / 1.1}
-                        onChange={() => { }}
-                    />
-                    <Text />
+                    <Text style={{ ...commonStyles.fs14_400, color: "#999", marginTop: 12 }}>
+                        Tag Serial Number
+                    </Text>
+                    <View style={{ ...commonStyles.rowBetween, marginTop: -10 }}>
+                        <ShadowBg
+                            width={SIZES.width / 4}
+                            image={require('../../Assets/shadow2.png')}
+                            height={42}
+                            paddingHorizontal={5}
+                            childComponent={
+                                <View
+                                    style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}>
+                                    <Text style={{ fontSize: 14, color: '#999' }}>
+                                        607469
+                                    </Text>
+                                </View>
+                            }
+                        />
+                        <View style={{ width: 10, height: 1.5, backgroundColor: "#999", marginRight: -16 }} />
+
+                        <CustomDropdownComponent
+                            placeholder="00B"
+                            data={data}
+                            width={SIZES.width / 4}
+                            height={42}
+                        />
+                        <View style={{ width: 10, height: 1.5, backgroundColor: "#999", marginLeft: -16 }} />
+
+                        <ShadowBg
+                            width={SIZES.width / 4}
+                            image={require('../../Assets/shadow2.png')}
+                            height={42}
+                            paddingHorizontal={5}
+                            childComponent={
+                                <View style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}>
+                                    <TextInput
+                                        placeholder='0087654'
+                                        placeholderTextColor="#999"
+                                        style={{ paddingHorizontal: 0, fontSize: 14 }}
+                                    />
+                                </View>
+                            }
+                        />
+                    </View>
 
                     <Text style={{ ...commonStyles.fs14_400, color: "#999" }}>
                         Input type

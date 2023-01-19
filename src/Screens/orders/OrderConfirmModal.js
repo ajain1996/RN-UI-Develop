@@ -10,10 +10,10 @@ import {
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
-import Crossbtn from '../../Components/Crossbtn';
 import Tick from '../../Assets/svg/tick.svg';
 import GreenCircle from '../../Assets/svg/green-circle.svg';
 import Svg from '../../utils/Svg';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 
 const OrderConfirmModal = ({ modalVisible, callback, navigation }) => {
     const [selectBank, setselectBank] = React.useState(false);
@@ -31,7 +31,7 @@ const OrderConfirmModal = ({ modalVisible, callback, navigation }) => {
                     underlayColor="transparent">
                     <TouchableOpacity style={styles.modalView} activeOpacity={1}>
                         <View style={{ alignItems: "flex-end", width: "100%" }}>
-                            <Crossbtn callback={callback} />
+                            <CrossSvg callback={callback} />
                         </View>
                         <View style={{ alignItems: "center", width: "100%", marginTop: 14 }}>
                             <Svg width="100" height="100" source={GreenCircle} />

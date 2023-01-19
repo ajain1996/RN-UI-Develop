@@ -16,7 +16,7 @@ export default function WalletDetailsScreen({ navigation }) {
                 navigation={navigation}
             />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingTop: 4 }}>
                     <Text style={{ ...commonStyles.fs18_500 }}>Customer Details</Text>
 

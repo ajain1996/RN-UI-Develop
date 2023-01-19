@@ -6,6 +6,8 @@ import { Button } from 'react-native-paper';
 import { COLORS, SIZES } from '../../Constant/Color';
 import InventoryFilterHeader from '../inventory/InventoryFilterHeader';
 import { CustomCheckTickbox2 } from '../../Components/CustomCheckbox';
+import { CrossSvg2 } from '../../Components/Crossbtn';
+import { UpArrowSvg } from '../../Components/svg/BackSvg';
 
 export default function AcknoledgementFilter({ navigation }) {
     const [showSelectedBanks, setshowSelectedBanks] = React.useState(true);
@@ -15,46 +17,33 @@ export default function AcknoledgementFilter({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryFilterHeader navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={styles.section1}>
                         <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }} onPress={() => {
                             setshowSelectedBanks(!showSelectedBanks)
                         }}>
                             <Text style={styles.title}>Select Banks</Text>
-                            <Image
-                                source={require("../../Assets/up-arrow.png")}
-                                resizeMode="contain"
-                                style={{ width: 18, height: 18 }}
-                            />
+                            <UpArrowSvg />
                         </TouchableOpacity>
 
                         {showSelectedBanks ? <>
                             <View style={{ ...commonStyles.row }}>
                                 <View style={styles.typeBtn}>
-                                    <Text style={{ ...commonStyles.fs12_400 }}>Paytm bank</Text>
-                                    <Image
-                                        source={require("../../Assets/cross.png")}
-                                        style={styles.cross}
-                                    />
+                                    <Text style={{ ...commonStyles.fs12_400, marginRight: 8 }}>Paytm bank</Text>
+                                    <CrossSvg2 onPress={() => { }} />
                                 </View>
                                 <View style={{ width: 14 }} />
                                 <View style={styles.typeBtn}>
-                                    <Text style={{ ...commonStyles.fs12_400 }}>Axis bank</Text>
-                                    <Image
-                                        source={require("../../Assets/cross.png")}
-                                        style={styles.cross}
-                                    />
+                                    <Text style={{ ...commonStyles.fs12_400, marginRight: 8 }}>Axis bank</Text>
+                                    <CrossSvg2 onPress={() => { }} />
                                 </View>
                             </View>
                             <View style={{ height: 14 }} />
                             <View style={{ ...commonStyles.rowStart }}>
                                 <View style={styles.typeBtn}>
-                                    <Text style={{ ...commonStyles.fs12_400 }}>State bank of india</Text>
-                                    <Image
-                                        source={require("../../Assets/cross.png")}
-                                        style={styles.cross}
-                                    />
+                                    <Text style={{ ...commonStyles.fs12_400, marginRight: 8 }}>State bank of india</Text>
+                                    <CrossSvg2 onPress={() => { }} />
                                 </View>
                             </View>
                         </> : <></>}
@@ -84,37 +73,24 @@ export default function AcknoledgementFilter({ navigation }) {
                             setShowVehicleClass(!showVehicleClass)
                         }}>
                             <Text style={styles.title}>Vehicle class</Text>
-                            <Image
-                                source={require("../../Assets/up-arrow.png")}
-                                resizeMode="contain"
-                                style={{ width: 18, height: 18 }}
-                            />
+                            <UpArrowSvg />
                         </TouchableOpacity>
 
                         {showVehicleClass ? <View style={{ ...commonStyles.row }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>VC-1</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={styles.cross}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>VC-1</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>VC-2</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={styles.cross}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>VC-2</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={{ ...commonStyles.rowStart }}>
                                 <View style={styles.typeBtn}>
-                                    <Text style={{ ...commonStyles.fs12_400 }}>VC-3</Text>
-                                    <Image
-                                        source={require("../../Assets/cross.png")}
-                                        style={styles.cross}
-                                    />
+                                    <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>VC-3</Text>
+                                    <CrossSvg2 onPress={() => { }} />
                                 </View>
                             </View>
                         </View> : <></>}

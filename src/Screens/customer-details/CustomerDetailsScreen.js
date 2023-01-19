@@ -6,6 +6,8 @@ import { ScrollView } from 'react-native'
 import { COLORS } from '../../Constant/Color'
 import RichText from '../../Components/RichText'
 import { Image } from 'react-native'
+import Svg from '../../utils/Svg'
+import Eye from "../../Assets/svg/eye.svg"
 
 export default function CustomerDetailsScreen({ navigation }) {
     return (
@@ -15,7 +17,7 @@ export default function CustomerDetailsScreen({ navigation }) {
                 navigation={navigation}
             />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
                     <Text style={{ ...commonStyles.fs18_500 }}>Customer Details</Text>
 
@@ -165,10 +167,7 @@ export const RenderDocument = ({ title, image, onPress, onPress2 }) => {
             />
             <View style={{ ...commonStyles.rowAround, width: "100%", marginTop: 12 }}>
                 <TouchableOpacity onPress={onPress}>
-                    <Image
-                        source={require("../../Assets/eye.png")}
-                        style={{ width: 24, height: 24, tintColor: COLORS.theme }}
-                    />
+                    <Svg width="30" height="30" source={Eye} />
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={onPress2}>

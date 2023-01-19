@@ -13,6 +13,8 @@ import { COLORS, SIZES } from '../../Constant/Color'
 import { TouchableHighlight } from 'react-native'
 import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
 import { data } from '../orders/CreateOrderModal'
+import SecurityUser from '../../Assets/svg/security-user.svg';
+import Svg from '../../utils/Svg'
 
 export default function InsuranceTrackerScreen({ navigation }) {
     const [selectBankAcc, setselectBankAcc] = React.useState(false);
@@ -24,7 +26,7 @@ export default function InsuranceTrackerScreen({ navigation }) {
                 navigation={navigation}
             />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />
@@ -51,10 +53,7 @@ export default function InsuranceTrackerScreen({ navigation }) {
                             <View style={styles.mainWrapper} key={index}>
                                 <View style={styles.priceWrapper}>
                                     <View style={{ ...commonStyles.rowStart }}>
-                                        <Image
-                                            source={require('../../Assets/security-user.png')}
-                                            style={{ width: 24, height: 24 }}
-                                        />
+                                        <Svg width="24" height="24" source={SecurityUser} />
                                         <View style={{ marginLeft: 8 }}>
                                             <Text style={{ ...commonStyles.fs14_600 }}>
                                                 606060-00B-252566

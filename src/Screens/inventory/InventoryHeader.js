@@ -1,14 +1,13 @@
-import { View, Text, Image, ImageBackground } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import React from 'react'
 import { commonStyles } from '../../utils/Styles'
 import { SIZES } from '../../Constant/Color'
-import BackBtn from '../../Components/BackBtn'
-import { DownloadCircleSvg } from '../../Components/svg/BackSvg'
+import { BackSvg2, DownloadCircleSvg } from '../../Components/svg/BackSvg'
 
 export default function InventoryHeader({ title, navigation }) {
     return (
-        <View style={{ ...commonStyles.rowBetween, marginVertical: 4, paddingRight: 16 }}>
-            <BackBtn onPress={() => { navigation.goBack() }} />
+        <View style={{ ...commonStyles.rowBetween, marginVertical: 4, paddingHorizontal: 16 }}>
+            <BackSvg2 onPress={() => { navigation.goBack() }} />
             <Text style={{ ...commonStyles.fs16_500 }}>{title}</Text>
 
             <ImageBackground

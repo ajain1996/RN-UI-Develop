@@ -30,7 +30,7 @@ const RegisterProfile = () => {
   return (
     <View style={{ ...commonStyles.bgFFF }}>
       <Header isBack={true} title="Profile" />
-      <ScrollView style={styles.subView}>
+      <ScrollView style={styles.subView} keyboardShouldPersistTaps={'always'}>
         <View style={styles.buttonView}>
           {isStepOne ? (
             <TouchableOpacity disabled style={{ width: '34%', marginLeft: -18 }}>

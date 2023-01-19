@@ -17,7 +17,7 @@ export default function TagRegistrationScreen1({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Tag Registration" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Mobile number"

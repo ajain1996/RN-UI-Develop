@@ -52,7 +52,7 @@ export default function WalletScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <WalletHeader navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ padding: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />

@@ -65,7 +65,7 @@ export function CrossSvg() {
         <TouchableHighlight
             style={{
                 elevation: 9, shadowColor: "#999", backgroundColor: COLORS.bg,
-                width: 40, height: 40, borderRadius: 100, ...commonStyles.centerStyles
+                width: 35, height: 35, borderRadius: 100, ...commonStyles.centerStyles
             }}
             onPress={() => { }} underlayColor="#eee"
         >

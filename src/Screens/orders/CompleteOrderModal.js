@@ -10,9 +10,9 @@ import {
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
-import Crossbtn from '../../Components/Crossbtn';
 import Order2 from "../../Assets/svg/order2.svg";
 import Svg from '../../utils/Svg';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 
 const CompleteOrderModal = ({ modalVisible, callback, editCallback }) => {
     return (
@@ -28,7 +28,7 @@ const CompleteOrderModal = ({ modalVisible, callback, editCallback }) => {
                     underlayColor="transparent">
                     <TouchableOpacity style={styles.modalView} activeOpacity={1}>
                         <View style={{ alignItems: "flex-end", width: "100%" }}>
-                            <Crossbtn callback={callback} />
+                            <CrossSvg callback={callback} />
                         </View>
                         <View style={{ alignItems: "center", width: "70%", marginTop: 14 }}>
                             <Svg width="90" height="90" source={Order2} />

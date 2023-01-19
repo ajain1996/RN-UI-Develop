@@ -7,9 +7,9 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
-import {styles} from './loginOTPVerificationStyle';
-import {IMAGE} from '../../Assets/Images/map';
+import React, { useState } from 'react';
+import { styles } from './loginOTPVerificationStyle';
+import { IMAGE } from '../../Assets/Images/map';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 
@@ -27,14 +27,14 @@ const loginOTPVerification = () => {
     setIsOTP(true);
   };
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps={'always'}>
       <View style={styles.mainconteiner}>
         <View style={styles.buttonView}>
           {isPssword ? (
             <TouchableOpacity style={styles.passwordBtn}>
               <LinearGradient
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
                 colors={['#3FA9F6', '#2360F0']}
                 style={styles.linearGradient}>
                 <Text style={styles.buttonText}>Login Via Password</Text>
@@ -47,10 +47,10 @@ const loginOTPVerification = () => {
           )}
 
           {isOTP ? (
-            <TouchableOpacity style={{width: '50%'}}>
+            <TouchableOpacity style={{ width: '50%' }}>
               <LinearGradient
-                start={{x: 0, y: 0}}
-                end={{x: 1, y: 0}}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
                 colors={['#3FA9F6', '#2360F0']}
                 style={styles.linearGradient}>
                 <Text style={styles.buttonText}>Login Via OTP</Text>

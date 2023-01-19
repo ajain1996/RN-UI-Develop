@@ -42,7 +42,7 @@ const WalletDatePicker = ({ modalVisible, callback }) => {
                     }}
                     underlayColor="transparent">
                     <TouchableOpacity style={styles.modalView} activeOpacity={1}>
-                        <ScrollView>
+                        <ScrollView keyboardShouldPersistTaps={'always'}>
                             <View style={{ ...commonStyles.rowBetween, paddingHorizontal: 20 }}>
                                 <View style={{ width: 50, height: 50 }} />
                                 <Text style={{ ...commonStyles.fs15_500 }}>Date Filter</Text>

@@ -38,7 +38,7 @@ const VerifyOTP = () => {
       style={{
         backgroundColor: COLORS.bg,
         flex: 1,
-      }}>
+      }} keyboardShouldPersistTaps="always">
       <View style={styles.mainconteiner}>
         <Header isBack={true} title="Verification Code" />
         <View style={styles.mainView}>

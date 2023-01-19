@@ -15,7 +15,7 @@ export default function NPCITagStatusScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="NPCI Tag Status" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Search with"

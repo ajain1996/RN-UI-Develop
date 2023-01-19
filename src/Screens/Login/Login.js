@@ -21,7 +21,7 @@ const Login = ({ navigation }) => {
     setIsOTP(true);
   };
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps={'always'}>
       <View style={styles.mainView}>
         <View style={styles.buttonView}>
           {isPssword ? (

@@ -33,14 +33,14 @@ const RegisterStepThree = () => {
         <View style={styles.mainView}>
             <Text style={styles.titleText}>ID proof Photo</Text>
             <View style={styles.cardView}>
-                <TouchableOpacity style={styles.cardTwo}>
+                <TouchableOpacity style={styles.cardTwo} onPress={getImage}>
                     <Image
                         style={[styles.addImage, { width: "75%", height: 65 }]}
                         source={IMAGE.uploadId} resizeMode="contain"
                     />
                     <Text style={styles.cardText}>Upload ID proof front</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cardTwo}>
+                <TouchableOpacity style={styles.cardTwo} onPress={getImage}>
                     <Image style={styles.addImage} source={IMAGE.addImage} />
                     <Text style={styles.cardText}>Upload PAN card photo here</Text>
                 </TouchableOpacity>
@@ -70,14 +70,14 @@ const RegisterStepThree = () => {
             <Text style={styles.titleText}>Address proof photo</Text>
 
             <View style={styles.cardView}>
-                <TouchableOpacity style={styles.cardTwo}>
+                <TouchableOpacity style={styles.cardTwo} onPress={getImage}>
                     <Image
                         style={[styles.addImage, { width: "75%", height: 65 }]}
                         source={IMAGE.uploadId} resizeMode="contain"
                     />
                     <Text style={styles.cardText}>Upload address proof front</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cardTwo}>
+                <TouchableOpacity style={styles.cardTwo} onPress={getImage}>
                     <Image style={styles.addImage} source={IMAGE.addImage} />
                     <Text style={styles.cardText}>Upload address proof back</Text>
                 </TouchableOpacity>

@@ -18,7 +18,7 @@ export default function RequestsScreen({ navigation }) {
     return (
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryHeader title="Requests" navigation={navigation} />
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <WalletSearch onChange={() => { }} />

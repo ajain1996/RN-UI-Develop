@@ -10,8 +10,9 @@ import {
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
-import Crossbtn from '../../Components/Crossbtn';
+import Crossbtn, { GreenTickSvg } from '../../Components/Crossbtn';
 import { Image } from 'react-native';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 
 const AcknowledgeRequestModal = ({ modalVisible, callback, navigation }) => {
     return (
@@ -27,14 +28,10 @@ const AcknowledgeRequestModal = ({ modalVisible, callback, navigation }) => {
                     underlayColor="transparent">
                     <TouchableOpacity style={styles.modalView} activeOpacity={1}>
                         <View style={{ alignItems: "flex-end", width: "100%" }}>
-                            <Crossbtn callback={callback} />
+                            <CrossSvg callback={callback} />
                         </View>
                         <View style={{ alignItems: "center", width: "70%", marginTop: 14 }}>
-                            <Image
-                                source={require("../../Assets/tick-mark.png")}
-                                resizeMode="contain"
-                                style={{ width: 90, height: 90, marginBottom: 20 }}
-                            />
+                            <GreenTickSvg />
 
                             <Text style={{ ...commonStyles.fs15_400, textAlign: "center", lineHeight: 22 }}>
                                 Acknowledgement request completed

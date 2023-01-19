@@ -18,7 +18,7 @@ export default function TagReplacementScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Tag replacement" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <Text style={{ ...commonStyles.fs16_500 }}>Customer details</Text>
                     <View style={styles.customerDetails}>

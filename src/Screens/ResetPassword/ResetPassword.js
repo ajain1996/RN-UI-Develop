@@ -25,7 +25,7 @@ const ResetPassword = () => {
   });
 
   return (
-    <ScrollView>
+    <ScrollView keyboardShouldPersistTaps={'always'}>
       <View style={styles.mainconteiner}>
         <Header isBack={true} title="Reset Password" />
         <View style={styles.mainView}>

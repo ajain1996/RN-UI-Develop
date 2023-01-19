@@ -4,7 +4,7 @@ import { dropdownStyles } from '../utils/dropdownStyles';
 import { Dropdown } from 'react-native-element-dropdown';
 import { SIZES } from '../Constant/Color';
 
-export default function CustomDropdownComponent({ placeholder, data, width }) {
+export default function CustomDropdownComponent({ placeholder, data, width, height }) {
     const [isFocus, setIsFocus] = React.useState(false);
     const [value, setValue] = React.useState("");
 
@@ -20,7 +20,7 @@ export default function CustomDropdownComponent({ placeholder, data, width }) {
         <View style={dropdownStyles.container}>
             <Dropdown
                 style={[dropdownStyles.dropdown, isFocus ? { borderColor: 'blue' } : {
-                    width: width ? width : SIZES.width / 1.25, alignSelf: "center"
+                    width: width ? width : SIZES.width / 1.25, alignSelf: "center", height: height ? height : 50
                 }]}
                 placeholderStyle={dropdownStyles.placeholderStyle}
                 selectedTextStyle={dropdownStyles.selectedTextStyle}

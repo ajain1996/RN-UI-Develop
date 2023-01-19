@@ -13,7 +13,7 @@ export default function TagReplacementScreen1({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <CustomHeader title="Tag Replacement" navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 20, paddingBottom: 16 }}>
                     <CustomInputBox
                         heading="Bank name"

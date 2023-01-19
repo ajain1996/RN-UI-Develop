@@ -1,17 +1,17 @@
-import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import ShadowIcon from './ShadowIcon'
+import Svg from '../utils/Svg'
+import Cross2 from "../Assets/svg/cross2.svg";
+import GreenTick from "../Assets/svg/green-tick.svg";
+import OtpBg from "../Assets/svg/otp-bg.svg";
 
-export default function Crossbtn({ callback }) {
-    return (
-        <TouchableOpacity
-            style={{ marginTop: -12 }}
-            onPress={callback}
-        >
-            <ShadowIcon
-                icon={require("../Assets/cross.png")}
-                size={12}
-            />
-        </TouchableOpacity>
-    )
+export function CrossSvg2() {
+    return <Svg width="12" height="12" source={Cross2} />
+}
+
+export function GreenTickSvg() {
+    return <Svg width="90" height="90" source={GreenTick} />
+}
+
+export function OtpBgSvg() {
+    return <Svg width="90" height="90" source={OtpBg} />
 }

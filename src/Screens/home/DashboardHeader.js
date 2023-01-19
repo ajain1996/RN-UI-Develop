@@ -1,10 +1,10 @@
-import { View, Text, ImageBackground, Image } from 'react-native'
+import { View, Text, ImageBackground } from 'react-native'
 import React from 'react'
 import { commonStyles } from '../../utils/Styles'
-import { COLORS, SIZES } from '../../Constant/Color'
+import { SIZES } from '../../Constant/Color'
 import MenuBtn from '../../Components/MenuBtn'
 import { CustomDrawer } from '../../Components/drawer/CustomDrawer'
-import SvgUri from 'react-native-svg-uri';
+import PlusCircleSvg from '../../Components/svg/PlusCircleSvg'
 
 export default function DashboardHeader({ navigation, title }) {
     const [showModalMenu, setshowModalMenu] = React.useState(false);
@@ -22,14 +22,7 @@ export default function DashboardHeader({ navigation, title }) {
                 >
                     <View style={{ ...commonStyles.rowBetween }}>
                         <Text style={{ ...commonStyles.fs14_600 }}>₹89.00</Text>
-                        {/* <SvgUri width={35} height={35} source={require("../../Assets/svg/plus.svg")}
-                            style={{ color: COLORS.theme }}
-                        /> */}
-                        <Image
-                            source={require("../../Assets/plus.png")}
-                            resizeMode="contain"
-                            style={{ width: 35, height: 35, marginLeft: 10, tintColor: COLORS.theme }}
-                        />
+                        <PlusCircleSvg onPress={() => { }} />
                     </View>
                 </ImageBackground>
             </View>

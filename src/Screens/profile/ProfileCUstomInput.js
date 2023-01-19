@@ -9,7 +9,9 @@ export default function ProfileCUstomInput({ icon, onChange, title, placeholder 
         <View style={{}}>
             <Text style={styles.nameText}>{title}</Text>
             <View style={styles.nameInputContainer}>
-                <Svg width="28" height="28" source={icon} style={{ padding: 0 }} />
+                <View style={{ padding: 4 }}>
+                    <Svg width="22" height="22" source={icon} />
+                </View>
                 <View style={styles.inputDivider} />
                 <TextInput
                     placeholder={placeholder ? placeholder : ""}

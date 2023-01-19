@@ -29,7 +29,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
         <View style={{ ...commonStyles.bgFFF }}>
             <ProfileHeader navigation={navigation} />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ padding: 18 }}>
                     <View style={styles.block1}>
                         <ProfileAccordian

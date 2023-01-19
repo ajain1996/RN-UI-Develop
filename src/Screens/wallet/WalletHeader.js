@@ -2,11 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { commonStyles } from '../../utils/Styles'
 import { SIZES } from '../../Constant/Color'
-import { Image } from 'react-native'
 import { ImageBackground } from 'react-native'
-import BackBtn from '../../Components/BackBtn'
 import BackSvg from '../../Components/svg/BackSvg'
-import Svg from '../../utils/Svg'
 import PlusCircleSvg from '../../Components/svg/PlusCircleSvg'
 
 export default function WalletHeader({ navigation }) {

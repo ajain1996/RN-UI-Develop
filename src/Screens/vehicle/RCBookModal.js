@@ -9,8 +9,8 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import { Button } from 'react-native-paper';
-import Crossbtn from '../../Components/Crossbtn';
 import RichText from '../../Components/RichText';
+import { CrossSvg } from '../../Components/svg/BackSvg';
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 
@@ -31,13 +31,13 @@ const RCBookModal = ({ modalVisible, callback, setModalVisible }) => {
                     }}
                     underlayColor="transparent">
                     <TouchableOpacity style={styles.modalView} activeOpacity={1}>
-                        <ScrollView>
+                        <ScrollView keyboardShouldPersistTaps={'always'}>
                             <View style={styles.modalHeader}>
                                 <View style={styles.borderText}>
                                     <Text style={{ ...commonStyles.fs14_500 }}>RJ 07 C 1534</Text>
                                 </View>
 
-                                <Crossbtn callback={callback} />
+                                <CrossSvg callback={callback} />
                             </View>
                             <View style={styles.mainWrapper}>
                                 <RichText

@@ -5,49 +5,38 @@ import { Image } from 'react-native';
 import { commonStyles } from '../../utils/Styles';
 import { COLORS, SIZES } from '../../Constant/Color';
 import { Button } from 'react-native-paper';
+import { CrossSvg2 } from '../../Components/Crossbtn';
+import { UpArrowSvg } from '../../Components/svg/BackSvg';
 
 export default function InventoryFilterScreen() {
     return (
         <View style={{ ...commonStyles.bgFFF }}>
             <InventoryFilterHeader />
 
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={{ paddingHorizontal: 16 }}>
                     <View style={{ width: "100%", padding: 16, backgroundColor: COLORS.bg, elevation: 9, shadowColor: "#999", borderRadius: 10 }}>
                         <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }}>
                             <Text style={{ ...commonStyles.fs16_500, color: COLORS.theme }}>Banks</Text>
-                            <Image
-                                source={require("../../Assets/up-arrow.png")}
-                                resizeMode="contain"
-                                style={{ width: 18, height: 18 }}
-                            />
+                            <UpArrowSvg />
                         </TouchableOpacity>
 
                         <View style={{ ...commonStyles.row }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Paytm bank</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Paytm bank</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Kotak bank</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Kotak bank</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                         </View>
                         <View style={{ height: 14 }} />
                         <View style={{ ...commonStyles.rowStart }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>State bank of india</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>State bank of india</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                         </View>
                     </View>
@@ -77,37 +66,24 @@ export default function InventoryFilterScreen() {
                     <View style={{ width: "100%", padding: 16, backgroundColor: COLORS.bg, elevation: 9, shadowColor: "#999", borderRadius: 10 }}>
                         <TouchableOpacity style={{ ...commonStyles.rowBetween, marginBottom: 12 }}>
                             <Text style={{ ...commonStyles.fs16_500, color: COLORS.theme }}>Status</Text>
-                            <Image
-                                source={require("../../Assets/up-arrow.png")}
-                                resizeMode="contain"
-                                style={{ width: 18, height: 18 }}
-                            />
+                            <UpArrowSvg />
                         </TouchableOpacity>
 
                         <View style={{ ...commonStyles.row }}>
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>In-Stock</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>In-Stock</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={styles.typeBtn}>
-                                <Text style={{ ...commonStyles.fs12_400 }}>Issued</Text>
-                                <Image
-                                    source={require("../../Assets/cross.png")}
-                                    style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                />
+                                <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Issued</Text>
+                                <CrossSvg2 onPress={() => { }} />
                             </View>
                             <View style={{ width: 14 }} />
                             <View style={{ ...commonStyles.rowStart }}>
                                 <View style={styles.typeBtn}>
-                                    <Text style={{ ...commonStyles.fs12_400 }}>Return</Text>
-                                    <Image
-                                        source={require("../../Assets/cross.png")}
-                                        style={{ width: 12, height: 12, tintColor: COLORS.theme, marginLeft: 12 }}
-                                    />
+                                    <Text style={{ ...commonStyles.fs12_400, marginRight: 10 }}>Return</Text>
+                                    <CrossSvg2 onPress={() => { }} />
                                 </View>
                             </View>
                         </View>

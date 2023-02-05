@@ -4,6 +4,7 @@ import { COLORS, SIZES } from '../../Constant/Color'
 import { commonStyles } from '../../utils/Styles'
 import { Button } from 'react-native-paper'
 import { BackSvg2 } from '../../Components/svg/BackSvg'
+import Feather from "react-native-vector-icons/Feather"
 
 export default function VirtualRCScreen() {
     return (
@@ -17,11 +18,7 @@ export default function VirtualRCScreen() {
                     style={{ width: 150, height: 80 }}
                 />
 
-                <Image
-                    source={require("../../Assets/refresh.png")}
-                    resizeMode="contain"
-                    style={{ width: 24, height: 24 }}
-                />
+                <Feather name="refresh-cw" color="#000" size={24} />
             </View>
             <ScrollView keyboardShouldPersistTaps={'always'}>
                 <View style={styles.qrContainer}>

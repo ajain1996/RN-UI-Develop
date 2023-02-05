@@ -3,6 +3,7 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { IMAGE } from '../../Assets/Images/map';
 import { commonStyles } from '../../utils/Styles';
 import { styles } from './CustomInputStyle';
+import Entypo from "react-native-vector-icons/Entypo";
 
 const CustomInput = props => {
   const [showEye, setShowEye] = useState(false);
@@ -22,10 +23,9 @@ const CustomInput = props => {
         />
         {props.isImage ? (
           <TouchableOpacity onPress={() => { setShowEye(!showEye) }} style={{ ...commonStyles.centerStyles }}>
-            <Image
-              source={showEye ? IMAGE.hidden : IMAGE.eye}
-              style={[props.secondImageStyle, styles.secondImage]}
-            />
+            {showEye
+              ? <Entypo name="eye-with-line" size={24} color="#999" />
+              : <Entypo name="eye" size={24} color="#999" />}
           </TouchableOpacity>
         ) : (
           <></>

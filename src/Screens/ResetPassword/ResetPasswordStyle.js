@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../Constant/Color';
+import { commonStyles } from '../../utils/Styles';
 
 export const styles = StyleSheet.create({
   mainconteiner: {
@@ -21,6 +22,17 @@ export const styles = StyleSheet.create({
     height: 144,
     marginTop: 60,
     alignSelf: 'center',
+  },
+  IMAGE_Style2: {
+    width: 120, height: 120,
+    marginTop: 60,
+    alignSelf: 'center',
+    elevation: 9,
+    shadowColor: "#999",
+    backgroundColor: COLORS.bg,
+    ...commonStyles.centerStyles,
+    borderRadius: 100,
+    paddingLeft: 8
   },
   textnumber: {
     fontSize: 48,

@@ -83,7 +83,7 @@ const Login = ({ navigation }) => {
                 onChangeText={value => setUserName(value)}
                 containerStyle={styles.container}
                 isImage={true}
-                secondImage={IMAGE.eye}
+                secondImage={true}
                 secondImageStyle={styles.eyeStyle}
               />
               <View style={styles.forgotView}>

@@ -13,5 +13,5 @@ export function GreenTickSvg() {
 }
 
 export function OtpBgSvg() {
-    return <Svg width="90" height="90" source={OtpBg} />
+    return <Svg width="110" height="110" source={OtpBg} />
 }

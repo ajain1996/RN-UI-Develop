@@ -9,8 +9,10 @@ import moment from 'moment/moment';
 import { Button } from 'react-native-paper';
 import WalletDatePicker from '../WalletDatePicker';
 import AddMoneyPicker from '../AddMoneyPicker';
-import BackSvg, { BackSvg2, ForwardSvg, UpArrowSvg } from '../../../Components/svg/BackSvg';
+import { BackSvg2, ForwardSvg, UpArrowSvg } from '../../../Components/svg/BackSvg';
 import { CrossSvg2 } from '../../../Components/Crossbtn';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function WalletFilterScreen({ navigation }) {
     var month = parseInt(moment().format('MM'));
@@ -47,10 +49,7 @@ export default function WalletFilterScreen({ navigation }) {
                                         style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}
                                         onPress={() => { setDateFilterModal(true) }}
                                     >
-                                        <Image
-                                            source={require('../../../Assets/date.png')}
-                                            style={{ width: 25, height: 25, tintColor: COLORS.theme }}
-                                        />
+                                        <Fontisto name='date' size={25} color={COLORS.theme} />
                                         <Text style={{ ...commonStyles.fs14_400, color: '#999' }}>
                                             01/01/2022
                                         </Text>
@@ -71,10 +70,7 @@ export default function WalletFilterScreen({ navigation }) {
                                         style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}
                                         onPress={() => { setaddMoneyModal(true) }}
                                     >
-                                        <Image
-                                            source={require('../../../Assets/date.png')}
-                                            style={{ width: 25, height: 25, tintColor: COLORS.theme }}
-                                        />
+                                        <Fontisto name='date' size={25} color={COLORS.theme} />
                                         <Text style={{ ...commonStyles.fs14_400, color: '#999' }}>
                                             Select Date
                                         </Text>
@@ -180,10 +176,7 @@ export default function WalletFilterScreen({ navigation }) {
                                     <View style={{ ...commonStyles.rowBetween, marginVertical: 8 }} key={index}>
                                         <Text style={{ ...commonStyles.fs14_400 }}>{item}</Text>
                                         <View style={{ width: 20, height: 20, borderWidth: 1, borderColor: "#999", ...commonStyles.centerStyles, borderRadius: 3 }}>
-                                            <Image
-                                                source={require("../../../Assets/tick.png")}
-                                                style={{ width: 12, height: 12 }}
-                                            />
+                                            <AntDesign name="check" size={12} color="#000" />
                                         </View>
                                     </View>
                                 );

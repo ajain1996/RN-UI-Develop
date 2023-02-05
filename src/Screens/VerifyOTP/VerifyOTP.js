@@ -21,6 +21,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
+import { OtpBgSvg } from '../../Components/Crossbtn';
 
 const VerifyOTP = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,12 @@ const VerifyOTP = () => {
         <Header isBack={true} title="Verification Code" />
         <View style={styles.mainView}>
           <View>
-            <Image style={styles.IMAGE_Style} source={IMAGE.verifyOTP} />
+            <View style={styles.IMAGE_Style2}>
+              <View style={{ marginTop: -5 }}>
+                <OtpBgSvg />
+              </View>
+            </View>
+            {/* <Image style={styles.IMAGE_Style} source={IMAGE.verifyOTP} /> */}
           </View>
           <View>
             <Text style={styles.Codetext}>

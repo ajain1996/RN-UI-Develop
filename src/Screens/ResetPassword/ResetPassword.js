@@ -13,6 +13,8 @@ import { IMAGE } from '../../Assets/Images/map';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import Header from '../../Components/Header/Header';
 import { CodeField, Cursor, useClearByFocusCell } from 'react-native-confirmation-code-field';
+import { OTPSvg } from '../../Components/svg/BackSvg';
+import { OtpBgSvg } from '../../Components/Crossbtn';
 
 const ResetPassword = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -30,7 +32,11 @@ const ResetPassword = () => {
         <Header isBack={true} title="Reset Password" />
         <View style={styles.mainView}>
           <View>
-            <Image style={styles.IMAGE_Style} source={IMAGE.verifyOTP} />
+            <View style={styles.IMAGE_Style2}>
+              <View style={{ marginTop: -5 }}>
+                <OtpBgSvg />
+              </View>
+            </View>
           </View>
           <View>
             <Text style={styles.Codetext}>

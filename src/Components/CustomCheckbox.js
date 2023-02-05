@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React, { useState } from 'react'
-import { commonStyles } from '../utils/Styles';
 import { COLORS } from '../Constant/Color';
 import { TouchableHighlight } from 'react-native';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export function CustomCheckTickbox({ callback }) {
     const [isChecked, setIsChecked] = useState(false);
@@ -15,17 +16,11 @@ export function CustomCheckTickbox({ callback }) {
     const returnCheck = () => {
         if (!isChecked) {
             return (
-                <Image
-                    source={require("../Assets/check-outline.png")}
-                    style={{ width: 18, height: 18, tintColor: "#666" }}
-                />
+                <Fontisto name="checkbox-passive" size={20} color="#666" />
             )
         } else {
             return (
-                <Image
-                    source={require("../Assets/checkbox.png")}
-                    style={{ width: 20, height: 20, tintColor: "#666" }}
-                />
+                <Fontisto name="checkbox-active" size={20} color="#666" />
             )
         }
     }
@@ -48,17 +43,11 @@ export function CustomCheckTickbox2({ callback }) {
     const returnCheck = () => {
         if (!isChecked) {
             return (
-                <Image
-                    source={require("../Assets/check-outline.png")}
-                    style={{ width: 18, height: 18, tintColor: "#666" }}
-                />
+                <Fontisto name="checkbox-active" size={18} color="#666" />
             )
         } else {
             return (
-                <Image
-                    source={require("../Assets/check-filled.png")}
-                    style={{ width: 20, height: 20, tintColor: COLORS.theme, borderRadius: 5 }}
-                />
+                <Ionicons name="checkbox" size={20} color="#666" />
             )
         }
     }

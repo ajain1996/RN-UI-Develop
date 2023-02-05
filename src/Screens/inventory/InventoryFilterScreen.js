@@ -7,6 +7,7 @@ import { COLORS, SIZES } from '../../Constant/Color';
 import { Button } from 'react-native-paper';
 import { CrossSvg2 } from '../../Components/Crossbtn';
 import { UpArrowSvg } from '../../Components/svg/BackSvg';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 export default function InventoryFilterScreen() {
     return (
@@ -50,10 +51,7 @@ export default function InventoryFilterScreen() {
                                     <View style={{ ...commonStyles.rowBetween, marginVertical: 8 }} key={index}>
                                         <Text style={{ ...commonStyles.fs14_400 }}>{item}</Text>
                                         <View style={{ width: 20, height: 20, borderWidth: 1, borderColor: "#999", ...commonStyles.centerStyles, borderRadius: 3 }}>
-                                            <Image
-                                                source={require("../../Assets/tick.png")}
-                                                style={{ width: 12, height: 12 }}
-                                            />
+                                            <AntDesign name="check" size={12} color="#000" />
                                         </View>
                                     </View>
                                 );
@@ -98,10 +96,7 @@ export default function InventoryFilterScreen() {
                                     <View style={{ ...commonStyles.rowBetween, marginVertical: 8 }} key={index}>
                                         <Text style={{ ...commonStyles.fs14_400 }}>{item}</Text>
                                         <View style={{ width: 20, height: 20, borderWidth: 1, borderColor: "#999", ...commonStyles.centerStyles, borderRadius: 3 }}>
-                                            <Image
-                                                source={require("../../Assets/tick.png")}
-                                                style={{ width: 12, height: 12 }}
-                                            />
+                                            <AntDesign name="check" size={12} color="#000" />
                                         </View>
                                     </View>
                                 );

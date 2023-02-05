@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Modal,
     StyleSheet,
@@ -10,15 +10,9 @@ import {
 import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
 import { Button } from 'react-native-paper';
-import Crossbtn from '../../Components/Crossbtn';
-import ProfileAccordian from '../profile/ProfileAccordian';
 import CustomInputBox from '../../Components/CustomInputBox';
-import { Dropdown } from 'react-native-element-dropdown'
-import { dropdownStyles } from '../../utils/dropdownStyles';
 import CustomDropdownComponent from '../../Components/CustomDropdownComponent';
 import { CrossSvg } from '../../Components/svg/BackSvg';
-import Svg from '../../utils/Svg';
-import Cross from '../../Assets/svg/cross.svg';
 
 export const data = [
     { label: 'HDFC', value: 'HDFC' },
@@ -29,8 +23,6 @@ export const data = [
 ];
 
 const CreateOrderModal = ({ modalVisible, callback, navigation }) => {
-    const [selectBank, setselectBank] = React.useState(false);
-
     return (
         <View style={{ alignItems: 'flex-start' }}>
             <Modal

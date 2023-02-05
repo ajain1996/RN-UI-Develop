@@ -23,8 +23,6 @@ const NewPassword = () => {
           onChangeText={value => setUserName(value)}
           containerStyle={styles.container}
           isImage={true}
-          secondImage={IMAGE.eye}
-          secondImageStyle={styles.eyeStyle}
         />
         <CustomInput
           image={IMAGE.password}
@@ -35,8 +33,6 @@ const NewPassword = () => {
           onChangeText={value => setUserName(value)}
           containerStyle={styles.container}
           isImage={true}
-          secondImage={IMAGE.eye}
-          secondImageStyle={styles.eyeStyle}
         />
         <View style={styles.buttonView}>
           <CustomButton buttonText={'Submit'} />

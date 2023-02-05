@@ -3,11 +3,17 @@ import React from 'react';
 import BackSVG from '../../Assets/svg/back.svg';
 import UpArrow from '../../Assets/svg/up-arrow.svg';
 import AddMoney from '../../Assets/svg/moneys.svg';
+import ShadowMoney from '../../Assets/svg/shadow-money.svg';
 import DownloadCircle from '../../Assets/svg/download-circle.svg';
 import Cross from '../../Assets/svg/cross.svg';
 import Svg from '../../utils/Svg';
-import { COLORS } from '../../Constant/Color';
+import { COLORS, SIZES } from '../../Constant/Color';
 import { commonStyles } from '../../utils/Styles';
+import { View } from 'react-native';
+import AddressFront from '../../Assets/svg/address-proof-front.svg';
+import AddressBack from '../../Assets/svg/address-proof-back.svg';
+import Otp from '../../Assets/svg/otp.svg';
+import Address from '../../Assets/svg/address.svg';
 
 export default function BackSvg({ onPress }) {
     return (
@@ -50,7 +56,12 @@ export function UpArrowSvg() {
 
 export function AddMoneySvg() {
     return (
-        <Svg width="50" height="50" source={AddMoney} style={{ padding: 0 }} />
+        <View style={{ marginTop: 16 }}>
+            <Svg width="100" height="100" source={ShadowMoney} />
+            <View style={{ position: "absolute", top: 24, left: 24 }}>
+                <Svg width="50" height="50" source={AddMoney} />
+            </View>
+        </View>
     );
 }
 
@@ -71,6 +82,34 @@ export function CrossSvg() {
         >
             <Svg width="70" height="70" source={Cross} style={{ padding: 0 }} />
         </TouchableHighlight>
+    );
+}
+
+export function AddressFrontSvg() {
+    return (
+        <View style={{ marginTop: 16 }}>
+            <Svg width={SIZES.width / 3.4} height={SIZES.width / 3.4} source={AddressFront} />
+            <View style={{ position: "absolute", top: 0, left: -10 }}>
+                <Svg width="50" height="50" source={Address} />
+            </View>
+        </View>
+    );
+}
+
+export function AddressBackSvg() {
+    return (
+        <View style={{ marginTop: 16 }}>
+            <Svg width={SIZES.width / 3.4} height={SIZES.width / 3.4} source={AddressBack} />
+            <View style={{ position: "absolute", top: 0, left: -10 }}>
+                <Svg width="50" height="50" source={Address} />
+            </View>
+        </View>
+    );
+}
+
+export function OTPSvg() {
+    return (
+        <Svg width="50" height="50" source={Otp} />
     );
 }
 

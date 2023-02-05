@@ -152,4 +152,15 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#007AFF',
     borderBottomWidth: 2,
   },
+  IMAGE_Style2: {
+    width: 120, height: 120,
+    marginTop: 60,
+    alignSelf: 'center',
+    elevation: 9,
+    shadowColor: "#999",
+    backgroundColor: COLORS.bg,
+    ...commonStyles.centerStyles,
+    borderRadius: 100,
+    paddingLeft: 8
+  },
 });

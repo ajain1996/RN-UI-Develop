@@ -19,6 +19,7 @@ import Map from '../../Assets/svg/map.svg';
 import SecurityUser from '../../Assets/svg/security-user.svg';
 import ShieldSecurity from '../../Assets/svg/shield-security.svg';
 import Location from '../../Assets/svg/location.svg';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function EditProfileDetailsScreen({ navigation }) {
     const [showMasterDetails, setshowMasterDetails] = React.useState(true);
@@ -82,10 +83,7 @@ export default function EditProfileDetailsScreen({ navigation }) {
                                             style={styles.profile}
                                         />
                                         <View style={styles.profileImgEdit}>
-                                            <Image
-                                                source={require("../../Assets/edit.png")}
-                                                style={{ width: 12, height: 12, margin: 6 }}
-                                            />
+                                            <AntDesign name="edit" size={12} color="#000" style={{ margin: 6 }} />
                                         </View>
                                     </View>
                                     <View style={{ paddingHorizontal: 20 }}>

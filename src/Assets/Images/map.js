@@ -1,6 +1,5 @@
 export const IMAGE = {
   phone: require('../Images/phone.png'),
-  eye: require('../Images/eye.png'),
   password: require('../Images/password.png'),
   back: require('../Images/back.png'),
   line: require('../Images/Line.png'),
@@ -16,6 +15,5 @@ export const IMAGE = {
   pancard: require('../Images/pancard.png'),
   addImage: require('../Images/addImage.png'),
   house: require('../Images/house.png'),
-  hidden: require('../hidden.png'),
   uploadId: require("../wallet-details.png")
 };

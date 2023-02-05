@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../Constant/Color';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../Constant/Color';
+import { commonStyles } from '../../utils/Styles';
 
 export const styles = StyleSheet.create({
   mainconteiner: {
@@ -124,5 +125,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     marginTop: 25,
+  },
+  IMAGE_Style2: {
+    width: 120, height: 120,
+    marginTop: 60,
+    alignSelf: 'center',
+    elevation: 9,
+    shadowColor: "#999",
+    backgroundColor: COLORS.bg,
+    ...commonStyles.centerStyles,
+    borderRadius: 100,
+    paddingLeft: 8
   },
 });

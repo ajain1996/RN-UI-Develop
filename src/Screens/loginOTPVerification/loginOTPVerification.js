@@ -12,6 +12,7 @@ import { styles } from './loginOTPVerificationStyle';
 import { IMAGE } from '../../Assets/Images/map';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomButton from '../../Components/CustomButton/CustomButton';
+import { OtpBgSvg } from '../../Components/Crossbtn';
 
 const loginOTPVerification = () => {
   const [isPssword, setIsPassword] = useState(false);
@@ -63,7 +64,11 @@ const loginOTPVerification = () => {
           )}
         </View>
         <View>
-          <Image style={styles.IMAGE_Style} source={IMAGE.verifyOTP} />
+          <View style={styles.IMAGE_Style2}>
+            <View style={{ marginTop: -5 }}>
+              <OtpBgSvg />
+            </View>
+          </View>
         </View>
         <View>
           <Text style={styles.Codetext}>Please type the verification code</Text>

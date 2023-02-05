@@ -11,6 +11,7 @@ import { Image } from 'react-native'
 import { Button } from 'react-native-paper'
 import CustomDropdownComponent from '../../Components/CustomDropdownComponent'
 import { data } from '../orders/CreateOrderModal'
+import { AddressBackSvg, AddressFrontSvg } from '../../Components/svg/BackSvg'
 
 export default function TagRegistrationScreen1({ navigation }) {
     return (
@@ -74,18 +75,10 @@ export default function TagRegistrationScreen1({ navigation }) {
                     <Text style={{ ...commonStyles.fs13_400, color: "#999" }}>RC Copy Photo</Text>
                     <View style={{ ...commonStyles.rowBetween }}>
                         <View style={styles.addressProf}>
-                            <Image
-                                source={require("../../Assets/address-front.png")}
-                                resizeMode="contain"
-                                style={{ width: SIZES.width / 3.4, height: SIZES.width / 3.4 }}
-                            />
+                            <AddressFrontSvg />
                         </View>
                         <View style={styles.addressProf}>
-                            <Image
-                                source={require("../../Assets/address-back.png")}
-                                resizeMode="contain"
-                                style={{ width: SIZES.width / 3.4, height: SIZES.width / 3.4 }}
-                            />
+                            <AddressBackSvg />
                         </View>
                     </View>
                     <Text />

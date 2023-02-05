@@ -8,6 +8,7 @@ import RichText from '../../Components/RichText'
 import { Image } from 'react-native'
 import Svg from '../../utils/Svg'
 import Eye from "../../Assets/svg/eye.svg"
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function CustomerDetailsScreen({ navigation }) {
     return (
@@ -171,10 +172,7 @@ export const RenderDocument = ({ title, image, onPress, onPress2 }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={onPress2}>
-                    <Image
-                        source={require("../../Assets/down-arrow.png")}
-                        style={{ width: 20, height: 20, tintColor: COLORS.theme }}
-                    />
+                    <MaterialCommunityIcons name="download-box-outline" size={20} color={COLORS.theme} />
                 </TouchableOpacity>
             </View>
         </View>

@@ -16,6 +16,7 @@ import { Button } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import ShadowBg from '../../Components/ShadowBg';
 import { BackSvg2, ForwardSvg } from '../../Components/svg/BackSvg';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const WalletDatePicker = ({ modalVisible, callback }) => {
     var month = parseInt(moment().format('MM'));
@@ -59,10 +60,7 @@ const WalletDatePicker = ({ modalVisible, callback }) => {
                                         childComponent={
                                             <View
                                                 style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}>
-                                                <Image
-                                                    source={require('../../Assets/date.png')}
-                                                    style={{ width: 25, height: 25, tintColor: COLORS.theme }}
-                                                />
+                                                <Fontisto name='date' size={25} color={COLORS.theme} />
                                                 <Text style={{ ...commonStyles.fs14_400, color: '#999' }}>
                                                     01/01/2022
                                                 </Text>
@@ -81,10 +79,7 @@ const WalletDatePicker = ({ modalVisible, callback }) => {
                                         childComponent={
                                             <View
                                                 style={{ ...commonStyles.rowBetween, paddingHorizontal: 14 }}>
-                                                <Image
-                                                    source={require('../../Assets/date.png')}
-                                                    style={{ width: 25, height: 25, tintColor: COLORS.theme }}
-                                                />
+                                                <Fontisto name='date' size={25} color={COLORS.theme} />
                                                 <Text style={{ ...commonStyles.fs14_400, color: '#999' }}>
                                                     Select Date
                                                 </Text>
